@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0f2340">
+<title>Liaison Asset Services</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px; line-height: 1.45; color: #0f2340; background: #ffffff;
+    -webkit-text-size-adjust: 100%;
+  }
+  .serif { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif; font-weight: 400; }
+  button { font: inherit; color: inherit; cursor: pointer; }
+  button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #c9a227; outline-offset: 2px; }
+  [hidden] { display: none !important; }
+  .wrap { max-width: 560px; margin: 0 auto; }
+
+  .bar { background: #ffffff; border-bottom: 2px solid #c9a227; position: sticky; top: 0; z-index: 5; }
+  .bar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 16px 8px; min-height: 64px; }
+  .bar img { height: 46px; width: auto; display: block; }
+  .bar .right { display: flex; gap: 8px; align-items: center; }
+  .chip { font-size: 14px; font-weight: 600; background: #ffffff; border: 1.5px solid #0f2340; border-radius: 20px; padding: 7px 14px; min-height: 38px; }
+  .back { font-size: 15px; font-weight: 600; background: none; border: 0; padding: 14px 0 6px; display: inline-block; }
+
+  .center { text-align: center; padding: 44px 26px 56px; }
+  .center img { width: 230px; max-width: 70%; height: auto; display: block; margin: 0 auto 26px; }
+  .center h1 { font-size: 26px; margin: 0 0 10px; }
+  .center p { font-size: 16px; color: #51606e; margin: 0 0 10px; }
+  .pin {
+    width: 100%; max-width: 260px; margin: 18px auto 10px; display: block; font: inherit; font-size: 30px; letter-spacing: 10px;
+    text-align: center; padding: 12px 8px; color: inherit; background: #ffffff; border: 2px solid #7d8a97; border-radius: 10px;
+  }
+  .check { display: flex; gap: 10px; align-items: center; justify-content: center; font-size: 15px; color: #51606e; margin: 14px 0 6px; }
+  .check input { width: 20px; height: 20px; accent-color: #0f2340; }
+
+  .hero { background: #0f2340; color: #ffffff; border-bottom: 3px solid #c9a227; }
+  .hero .wrap { padding: 22px 16px 20px; }
+  .hero .level { font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: #e6c861; }
+  .hero h1 { font-size: 32px; line-height: 1.12; margin: 6px 0 4px; overflow-wrap: anywhere; }
+  .hero .loc { font-size: 15px; color: #d5dbe6; }
+
+  .pad { padding: 16px 16px 44px; }
+  .pill { display: inline-flex; align-items: center; gap: 8px; border-radius: 20px; padding: 6px 14px; font-size: 15px; font-weight: 700; border: 1.5px solid; }
+  .pill i { width: 10px; height: 10px; border-radius: 50%; background: currentColor; display: inline-block; }
+  .pill.s { color: #1c6b3c; } .pill.a { color: #8a5a00; background: #fff8e1; } .pill.r { color: #a8320a; background: #ffece4; }
+  .live { font-size: 13px; color: #51606e; margin: 10px 0 14px; display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; }
+  .live b { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #c9a227; margin-right: 7px; }
+  .link { background: none; border: 0; padding: 0; font-size: inherit; text-decoration: underline; color: #0f2340; }
+
+  .tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .tile { background: #eef1f5; border: 2px solid #eef1f5; border-radius: 12px; padding: 12px 12px 11px; text-align: left; min-height: 74px; display: block; width: 100%; }
+  .tile small { display: block; font-size: 11px; letter-spacing: .9px; text-transform: uppercase; color: #51606e; font-weight: 700; margin-bottom: 4px; }
+  .tile span { display: block; font-size: 18px; font-weight: 700; line-height: 1.25; }
+  .tile.you { background: #ffffff; border-color: #c9a227; }
+  .tile.wide { grid-column: 1 / -1; }
+  .hint { font-size: 13px; color: #51606e; margin: 10px 0 0; }
+
+  .sec { margin-top: 24px; }
+  .sec h2 { font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; font-weight: 700; margin: 0 0 8px; padding-bottom: 7px; border-bottom: 1.5px solid #c9a227; }
+  .sec p { margin: 0; font-size: 16px; }
+  h1.title { font-size: 26px; line-height: 1.15; margin: 4px 0 2px; }
+  .sub { font-size: 14px; color: #51606e; margin: 0 0 6px; }
+
+  .card { border: 1.5px solid #c9a227; border-radius: 12px; padding: 14px; margin-top: 10px; background: #ffffff; }
+  .card .t { font-weight: 700; font-size: 17px; }
+  .card .r { font-size: 14px; color: #51606e; margin: 4px 0 8px; }
+  .amt { font-size: 21px; font-weight: 700; }
+  .btn { display: block; width: 100%; text-align: center; border-radius: 10px; padding: 14px 12px; font-size: 16px; font-weight: 700; margin-top: 10px; min-height: 50px; border: 1.5px solid #0f2340; background: #ffffff; color: #0f2340; text-decoration: none; }
+  .btn.navy { background: #0f2340; color: #ffffff; }
+  .btn:disabled { opacity: .55; }
+
+  .rows button { display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 2px; border: 0; border-bottom: 1px solid #d5dbe1; background: none; font-size: 16px; font-weight: 600; text-align: left; }
+  .rows button span { color: #51606e; font-weight: 400; font-size: 14px; white-space: nowrap; }
+
+  .item { border-bottom: 1px solid #d5dbe1; padding: 14px 0; }
+  .item:last-child { border-bottom: 0; }
+  .item .h { font-weight: 700; font-size: 16px; line-height: 1.35; overflow-wrap: anywhere; }
+  .item .h a { color: #0f2340; }
+  .item .m { font-size: 13.5px; color: #51606e; margin: 3px 0 8px; }
+  .tag { display: inline-block; font-size: 12.5px; font-weight: 700; border-radius: 12px; padding: 3px 10px; background: #eef1f5; color: #0f2340; margin: 0 6px 4px 0; }
+  .tag.w { background: #fff1c9; color: #6b4e00; } .tag.g { background: #e3f3e6; color: #1c6b3c; } .tag.r { background: #ffe1d6; color: #7a1d00; }
+  .note { background: #eef1f5; border-left: 3px solid #c9a227; border-radius: 6px; padding: 9px 11px; font-size: 14.5px; margin-top: 8px; overflow-wrap: anywhere; }
+  .note b { font-size: 11px; letter-spacing: .8px; text-transform: uppercase; color: #51606e; display: block; font-weight: 700; }
+  .more { font-size: 14px; margin-top: 8px; }
+  .more a, .more button { color: #0f2340; }
+
+  .kv b { display: block; font-size: 11px; letter-spacing: .8px; text-transform: uppercase; color: #51606e; margin-top: 14px; font-weight: 700; }
+  .kv div { font-size: 16px; overflow-wrap: anywhere; }
+  .box { border-radius: 8px; padding: 12px 14px; font-size: 15px; margin-top: 14px; }
+  .box.good { background: #e3f3e6; border-left: 5px solid #1c6b3c; }
+  .box.warn { background: #fff1c9; border-left: 5px solid #c9a227; }
+  .box.bad { background: #ffe1d6; border-left: 5px solid #a8320a; color: #7a1d00; font-weight: 600; }
+  textarea { width: 100%; font: inherit; padding: 11px; min-height: 76px; resize: vertical; color: inherit; background: #ffffff; border: 2px solid #7d8a97; border-radius: 10px; margin-top: 6px; }
+  label.l { display: block; font-weight: 600; font-size: 15px; margin-top: 16px; }
+  .f { width: 100%; font: inherit; padding: 11px; color: inherit; background: #ffffff; border: 2px solid #7d8a97; border-radius: 10px; margin-top: 6px; min-height: 48px; }
+  .f.bad, textarea.bad { border-color: #a8320a; background: #fff6f2; }
+  .tick { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; margin-top: 18px; }
+  .tick input { width: 24px; height: 24px; flex: none; margin-top: 1px; accent-color: #0f2340; }
+  .qh { font-size: 13px; color: #51606e; margin-top: 4px; }
+
+  table.t { width: 100%; border-collapse: collapse; font-size: 14.5px; margin-top: 4px; }
+  table.t th { text-align: left; font-size: 11px; letter-spacing: .8px; text-transform: uppercase; color: #51606e; padding: 6px 4px; border-bottom: 1px solid #d5dbe1; font-weight: 700; }
+  table.t td { padding: 8px 4px; border-bottom: 1px solid #eef1f5; vertical-align: top; }
+  table.t td.n, table.t th.n { text-align: right; white-space: nowrap; }
+  .bal { font-size: 24px; font-weight: 700; }
+  .foot { margin-top: 28px; font-size: 13px; color: #51606e; text-align: center; }
+  .empty { color: #51606e; font-size: 15px; padding: 10px 0; }
+</style>
+</head>
+<body>
+  <header class="bar" id="bar" hidden><div class="wrap">
+    <img id="logoBar" alt="Liaison Asset Services">
+    <div class="right"><button type="button" class="chip" id="lang"></button></div>
+  </div></header>
+  <main id="app"></main>
+
+<script>
+  var API = "https://script.google.com/macros/s/AKfycbyZUGGG2Eh5Xu7nIeeYtdUJssKllxFe9MG55fJbYcIdX7-7V9ekhptAzEOM2fP2SL54/exec";
+  var LOGO = "data:image/jpeg;base64,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";
+
+  var T = {
+    en: {
+      other: "Español", loading: "Loading...", back: "Back",
+      privTitle: "This page is private",
+      privText: "Please open the personal link Liaison Asset Services sent you.",
+      offText: "This link is no longer active. Please message Liaison Asset Services.",
+      welcome: "Welcome", pinAsk: "Enter your {n}-digit PIN.", keep: "Keep me signed in on this phone for {d} days", go: "Continue",
+      BAD_PIN: "That PIN is not correct. {n} tries left.", PAUSED: "Too many wrong PINs. Sign-in is paused for {m} minutes. Liaison Asset Services has been told.",
+      NET: "No connection. Check your signal and try again.", SERVER: "Something went wrong. Please try again.", BUSY: "One moment. Please try again.",
+      NOT_READY: "Your property record is being updated. Please try again shortly, or message Liaison Asset Services.",
+      retry: "Try again", refresh: "Refresh", signOut: "Sign out", signedAs: "Signed in as {name}",
+      live: "Live from your Portfolio", wa: "Message LAS on WhatsApp",
+      st_Stable: "Property stable", st_Attention: "Needs attention", st_Immediate: "Immediate action",
+      delivered: "Property Portfolio delivered {d}", deliveredNo: "Property Portfolio",
+      oneTime: "This is your property record as it was documented and delivered. It is not updated after delivery.",
+      lastVisit: "Last visit", nextVisit: "Next visit", openItems: "Open items", decisionNeeded: "Decision needed", decisionsNeeded: "Decisions needed",
+      upcoming: "Upcoming maintenance", wallet: "House Wallet", none: "None", notSet: "Not scheduled", noneYet: "None recorded",
+      tapHint: "Tap any box to see the detail and notes.",
+      happened: "What happened", did: "What we did", attention: "What needs attention",
+      noDecision: "No owner action required.",
+      rec: "Our recommendation", amount: "Quoted amount", noAmount: "No amount", view: "View the detail",
+      approve: "Approve", defer: "Defer", other2: "Request another option",
+      record: "The record", activity: "Property activity", systems: "Systems & maintenance", ledger: "Property ledger", decisions: "Owner decisions",
+      files: "Files & proof", vendors: "Vendors", precord: "Property record", visits: "Visits",
+      entries: "{n} entries", entry: "1 entry", items: "{n} items", item1: "1 item",
+      nextStep: "Next step", notes: "Notes", proof: "Proof", open: "Open", responsible: "Responsible", related: "Related",
+      due: "Due {d}", lastAction: "Last action", source: "Source", location: "Location", pastDue: "Past due",
+      nothing: "Nothing here yet.", nothingOpen: "No open items.", nothingUp: "No maintenance is due soon.",
+      decisionT: "Decision", openedOn: "opened {d}", behind: "Behind this", waiting: "Waiting on you",
+      youChose: "{who} chose: {c}", recorded: "Recorded {t}.", told: "Liaison Asset Services has been notified.",
+      changed: "Changed your mind? Message Liaison Asset Services on WhatsApp. The record keeps both entries.",
+      confirmT_approve: "Approve this?", confirmT_defer: "Defer this?", confirmT_other: "Request another option?",
+      confirmP_approve: "You are approving:", confirmP_defer: "You are asking us to hold this for now:", confirmP_other: "You are asking us to bring you another option for:",
+      noteL: "Add a note (optional)", yes_approve: "Yes, approve", yes_defer: "Yes, defer", yes_other: "Yes, request another option", goBack: "Go back", saving: "Recording...",
+      ALREADY: "This decision was already recorded. Here is the record.", CHANGED: "The details changed while you were reading. Please review it again before deciding.",
+      GONE: "This decision is no longer on your record.", NOT_ALLOWED: "Decisions cannot be answered from this sign-in. Please message Liaison Asset Services.",
+      viewOnly: "You can see this decision. It is answered by the owner on record.",
+      bills: "Bills", toPay: "To be paid", paidBills: "Paid", allEntries: "All entries", paidOn: "Paid {d}", dueOn: "Due {d}", paidBy: "Paid by", payFrom: "To be paid by",
+      byYou: "To be paid by you", byWallet: "To be paid from the House Wallet",
+      balance: "Balance", deposits: "Deposits", paidOut: "Paid out", waitingPay: "Waiting to be paid", preferred: "Preferred balance", trigger: "Replenish below",
+      byCat: "By category", category: "Category", limit: "Preapproved per bill", thisMonth: "Paid this month", toDate: "Paid to date",
+      depositsT: "Deposits", walletPays: "Paid from the House Wallet", walletNote: "Each currency is kept on its own and nothing is converted.",
+      inTitle: "Tell us what you know", inText: "We will help organize the rest. Answer what you can and leave the rest blank.",
+      inProgress: "{a} of {n} answered", inStart: "Start", inContinue: "Continue",
+      inThanks: "Thank you. We have your information.", inReceived: "Received {t}.", inSee: "See what you sent",
+      inHead: "Your property information", inSave: "Save this section", inSend: "Send to Liaison Asset Services",
+      inSendHint: "Send it when you are ready. Blank answers are recorded as Unknown / To Verify, and we verify them for you.",
+      inSaved: "Saved.", choose: "Choose...", noAnswer: "Not answered",
+      NO_CODES: "Please take any codes or passwords out of the marked answers. We arrange those with you directly.",
+      NEED_ACK: "Please tick the box at the end of this section before sending.",
+      INTAKE_CLOSED: "This information was already sent. Message Liaison Asset Services to change an answer.",
+      pendingT: "Your Property Portfolio is being set up", pendingP: "You will see your property here as soon as the record is ready.",
+      noLimit: "Ask first", setup: "Property setup", keepNote: "Kept", lastUsed: "Last used {d}", seeWallet: "House Wallet detail",
+      needTile: "Needed from you", nothingNeeded: "Nothing", need: "What we need from you", noNeed: "Nothing is needed from you right now.",
+      billsForYou: "Bills for you to pay", decisionsWaiting: "Decisions waiting on you",
+      call: "Call me first", confirmT_call: "Ask for a call first?", confirmP_call: "You are asking us to call you before you decide on:", yes_call: "Yes, call me first",
+      calledT: "You asked us to call you first.", calledP: "The decision stays open until you choose.", callTag: "Call requested",
+      ON_HOLD: "Your service is on Seasonal Hold, so decisions are paused. Please message Liaison Asset Services.",
+      holdDecisions: "Decisions are paused during the Seasonal Hold.",
+      mode_hold: "Seasonal Hold", mode_residence: "Owner-in-Residence", mode_interruption: "Service interruption",
+      modeP_hold: "Active service is paused. Your record is kept and stays readable here. Visits, decisions and House Wallet payments start again when service resumes.",
+      modeP_residence: "You are staying at the property. Your plan continues, and included visits may be put to other approved tasks instead of a routine walkthrough.",
+      modeP_interruption: "We could not deliver an included service. We will reschedule it, substitute it, or credit you.",
+      since: "Since {d}", until: "Until {d}", sinceUntil: "{a} to {b}", paused: "Paused",
+      visitsLine: "Included visits, {a} to {b}: {u} of {n} made",
+      vc_included: "Included visit", vc_repair: "Repair visit", vc_project: "Project verification", vc_additional: "Additional visit (billed)", vc_expedited: "Expedited response (billed)", vc_vendor: "Vendor visit",
+      hoursOn: "{h} h on site",
+      projects: "Projects", activeProjects: "Active projects", pastProjects: "Finished projects", viewProject: "View the project",
+      pId: "Project", pLevel: "Oversight level", pScope: "Scope", pVendors: "Vendor(s)", pCost: "Expected cost of the work", pStart: "Start", pDue: "Expected close", pClosed: "Closed", pUpdate: "Latest update",
+      pDays: "Day {d} of {n}", pDaysOpen: "Day {d}", pRan: "Ran {d} days", pChecks: "Field verifications: {u} of {n} made",
+      pl_simple: "Up to 7 days, with 1 field verification.", pl_standard: "Up to 14 days, with 2 field verifications.", pl_enhanced: "Up to 30 days, with 3 field verifications.",
+      pScopeNote: "Project Oversight is coordination, documentation and visible progress verification. LAS does not direct the contractor's methods, supervise job-site safety, certify code compliance or guarantee workmanship.",
+      pDecisions: "Decisions for this project", pActivity: "Visits and activity", pMoney: "Costs and payments", pFiles: "Files and proof",
+      projectHome: "You have Project Oversight for this property. This is where your project stands.", noProjects: "No project is on record yet.",
+      pendingT_project: "Your project record is being set up",
+      balanceRec: "Balance by LAS records", tookOut: "Taken out by you", bankOk: "Matched to the bank on {d}", bankNo: "Bank check on {d}: being reconciled",
+      walletYours: "The House Wallet is your account and you control it at all times. Liaison Asset Services records what goes in and out, and keeps the proof.",
+      walletPaused: "Payments from the House Wallet are paused during the Seasonal Hold.",
+      withdrawal: "Taken out by you", depositsW: "Deposits and withdrawals",
+      glossary: "What our words mean", gl1: "Words on this dashboard", gl2: "What our services mean",
+      md: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    },
+    es: {
+      other: "English", loading: "Cargando...", back: "Volver",
+      privTitle: "Esta página es privada",
+      privText: "Por favor abra el enlace personal que le envió Liaison Asset Services.",
+      offText: "Este enlace ya no está activo. Por favor escriba a Liaison Asset Services.",
+      welcome: "Bienvenido", pinAsk: "Escriba su PIN de {n} dígitos.", keep: "Mantener la sesión en este teléfono por {d} días", go: "Continuar",
+      BAD_PIN: "Ese PIN no es correcto. Le quedan {n} intentos.", PAUSED: "Demasiados PIN incorrectos. El acceso está en pausa por {m} minutos. Liaison Asset Services fue avisado.",
+      NET: "Sin conexión. Revise su señal e intente de nuevo.", SERVER: "Algo salió mal. Por favor intente de nuevo.", BUSY: "Un momento. Por favor intente de nuevo.",
+      NOT_READY: "El registro de su propiedad se está actualizando. Intente de nuevo en un momento o escriba a Liaison Asset Services.",
+      retry: "Intentar de nuevo", refresh: "Actualizar", signOut: "Cerrar sesión", signedAs: "Sesión de {name}",
+      live: "En vivo desde su Portafolio", wa: "Escribir a LAS por WhatsApp",
+      st_Stable: "Propiedad estable", st_Attention: "Requiere atención", st_Immediate: "Acción inmediata",
+      delivered: "Portafolio de la propiedad entregado el {d}", deliveredNo: "Portafolio de la propiedad",
+      oneTime: "Este es el registro de su propiedad tal como se documentó y entregó. No se actualiza después de la entrega.",
+      lastVisit: "Última visita", nextVisit: "Próxima visita", openItems: "Asuntos abiertos", decisionNeeded: "Decisión pendiente", decisionsNeeded: "Decisiones pendientes",
+      upcoming: "Mantenimiento próximo", wallet: "House Wallet", none: "Ninguna", notSet: "Sin programar", noneYet: "Sin registro",
+      tapHint: "Toque cualquier cuadro para ver el detalle y las notas.",
+      happened: "Qué pasó", did: "Qué hicimos", attention: "Qué requiere atención",
+      noDecision: "No se requiere ninguna acción de su parte.",
+      rec: "Nuestra recomendación", amount: "Monto cotizado", noAmount: "Sin monto", view: "Ver el detalle",
+      approve: "Aprobar", defer: "Posponer", other2: "Pedir otra opción",
+      record: "El registro", activity: "Actividad de la propiedad", systems: "Sistemas y mantenimiento", ledger: "Libro de la propiedad", decisions: "Decisiones del propietario",
+      files: "Archivos y comprobantes", vendors: "Proveedores", precord: "Registro de la propiedad", visits: "Visitas",
+      entries: "{n} registros", entry: "1 registro", items: "{n} asuntos", item1: "1 asunto",
+      nextStep: "Siguiente paso", notes: "Notas", proof: "Comprobante", open: "Abrir", responsible: "Responsable", related: "Relacionado",
+      due: "Vence {d}", lastAction: "Última acción", source: "Fuente", location: "Ubicación", pastDue: "Vencido",
+      nothing: "Aún no hay nada aquí.", nothingOpen: "No hay asuntos abiertos.", nothingUp: "No hay mantenimiento próximo.",
+      decisionT: "Decisión", openedOn: "abierta el {d}", behind: "Detrás de esto", waiting: "En espera de usted",
+      youChose: "{who} eligió: {c}", recorded: "Registrado el {t}.", told: "Liaison Asset Services fue notificado.",
+      changed: "¿Cambió de opinión? Escriba a Liaison Asset Services por WhatsApp. El registro conserva ambas entradas.",
+      confirmT_approve: "¿Aprobar esto?", confirmT_defer: "¿Posponer esto?", confirmT_other: "¿Pedir otra opción?",
+      confirmP_approve: "Usted está aprobando:", confirmP_defer: "Usted nos pide dejar esto en espera por ahora:", confirmP_other: "Usted nos pide traerle otra opción para:",
+      noteL: "Agregar una nota (opcional)", yes_approve: "Sí, aprobar", yes_defer: "Sí, posponer", yes_other: "Sí, pedir otra opción", goBack: "Volver", saving: "Registrando...",
+      ALREADY: "Esta decisión ya estaba registrada. Aquí está el registro.", CHANGED: "Los detalles cambiaron mientras leía. Por favor revíselos de nuevo antes de decidir.",
+      GONE: "Esta decisión ya no está en su registro.", NOT_ALLOWED: "Las decisiones no se pueden responder desde este acceso. Por favor escriba a Liaison Asset Services.",
+      viewOnly: "Usted puede ver esta decisión. La responde el propietario registrado.",
+      bills: "Cuentas", toPay: "Por pagar", paidBills: "Pagadas", allEntries: "Todos los registros", paidOn: "Pagado el {d}", dueOn: "Vence el {d}", paidBy: "Pagado por", payFrom: "Lo paga",
+      byYou: "Por pagar por usted", byWallet: "Por pagar desde el House Wallet",
+      balance: "Saldo", deposits: "Depósitos", paidOut: "Pagado", waitingPay: "Por pagar", preferred: "Saldo preferido", trigger: "Reponer por debajo de",
+      byCat: "Por categoría", category: "Categoría", limit: "Preaprobado por cuenta", thisMonth: "Pagado este mes", toDate: "Pagado a la fecha",
+      depositsT: "Depósitos", walletPays: "Pagado desde el House Wallet", walletNote: "Cada moneda se lleva por separado y no se convierte nada.",
+      inTitle: "Cuéntenos lo que sabe", inText: "Nosotros le ayudamos a organizar lo demás. Responda lo que pueda y deje lo demás en blanco.",
+      inProgress: "{a} de {n} respondidas", inStart: "Comenzar", inContinue: "Continuar",
+      inThanks: "Gracias. Ya tenemos su información.", inReceived: "Recibido el {t}.", inSee: "Ver lo que envió",
+      inHead: "Información de su propiedad", inSave: "Guardar esta sección", inSend: "Enviar a Liaison Asset Services",
+      inSendHint: "Envíelo cuando esté listo. Las respuestas en blanco se registran como Desconocido / Por verificar, y nosotros las verificamos.",
+      inSaved: "Guardado.", choose: "Elija...", noAnswer: "Sin respuesta",
+      NO_CODES: "Por favor quite los códigos o contraseñas de las respuestas marcadas. Eso lo coordinamos directamente con usted.",
+      NEED_ACK: "Por favor marque la casilla al final de esta sección antes de enviar.",
+      INTAKE_CLOSED: "Esta información ya fue enviada. Escriba a Liaison Asset Services para cambiar una respuesta.",
+      pendingT: "Su Portafolio de la propiedad se está preparando", pendingP: "Verá su propiedad aquí en cuanto el registro esté listo.",
+      noLimit: "Consultar antes", setup: "Configuración de la propiedad", keepNote: "Se conserva", lastUsed: "Último uso {d}", seeWallet: "Detalle del House Wallet",
+      needTile: "Pendiente de usted", nothingNeeded: "Nada", need: "Qué necesitamos de usted", noNeed: "Por ahora no necesitamos nada de usted.",
+      billsForYou: "Cuentas que paga usted", decisionsWaiting: "Decisiones en espera de usted",
+      call: "Llámenme primero", confirmT_call: "¿Pedir una llamada primero?", confirmP_call: "Usted nos pide llamarle antes de decidir sobre:", yes_call: "Sí, llámenme primero",
+      calledT: "Usted pidió que le llamemos primero.", calledP: "La decisión sigue abierta hasta que usted elija.", callTag: "Llamada solicitada",
+      ON_HOLD: "Su servicio está en Pausa de temporada, por eso las decisiones están en pausa. Por favor escriba a Liaison Asset Services.",
+      holdDecisions: "Las decisiones están en pausa durante la Pausa de temporada.",
+      mode_hold: "Pausa de temporada", mode_residence: "Propietario en la residencia", mode_interruption: "Interrupción del servicio",
+      modeP_hold: "El servicio activo está en pausa. Su registro se conserva y puede leerlo aquí. Las visitas, las decisiones y los pagos del House Wallet se reanudan cuando vuelva el servicio.",
+      modeP_residence: "Usted está en la propiedad. Su plan continúa, y las visitas incluidas pueden usarse para otras tareas aprobadas en lugar de un recorrido de rutina.",
+      modeP_interruption: "No pudimos prestar un servicio incluido. Lo reprogramaremos, lo sustituiremos o le daremos un crédito.",
+      since: "Desde el {d}", until: "Hasta el {d}", sinceUntil: "Del {a} al {b}", paused: "En pausa",
+      visitsLine: "Visitas incluidas, del {a} al {b}: {u} de {n} realizadas",
+      vc_included: "Visita incluida", vc_repair: "Visita de reparación", vc_project: "Verificación de proyecto", vc_additional: "Visita adicional (se factura)", vc_expedited: "Respuesta urgente (se factura)", vc_vendor: "Visita del proveedor",
+      hoursOn: "{h} h en sitio",
+      projects: "Proyectos", activeProjects: "Proyectos activos", pastProjects: "Proyectos terminados", viewProject: "Ver el proyecto",
+      pId: "Proyecto", pLevel: "Nivel de supervisión", pScope: "Alcance", pVendors: "Proveedor(es)", pCost: "Costo esperado del trabajo", pStart: "Inicio", pDue: "Cierre esperado", pClosed: "Cerrado", pUpdate: "Última novedad",
+      pDays: "Día {d} de {n}", pDaysOpen: "Día {d}", pRan: "Duró {d} días", pChecks: "Verificaciones en sitio: {u} de {n} realizadas",
+      pl_simple: "Hasta 7 días, con 1 verificación en sitio.", pl_standard: "Hasta 14 días, con 2 verificaciones en sitio.", pl_enhanced: "Hasta 30 días, con 3 verificaciones en sitio.",
+      pScopeNote: "La Supervisión de proyecto es coordinación, documentación y verificación del avance visible. LAS no dirige los métodos del contratista, no supervisa la seguridad de la obra, no certifica el cumplimiento de códigos ni garantiza la mano de obra.",
+      pDecisions: "Decisiones de este proyecto", pActivity: "Visitas y actividad", pMoney: "Costos y pagos", pFiles: "Archivos y comprobantes",
+      projectHome: "Usted tiene Supervisión de proyecto para esta propiedad. Así va su proyecto.", noProjects: "Aún no hay ningún proyecto registrado.",
+      pendingT_project: "El registro de su proyecto se está preparando",
+      balanceRec: "Saldo según los registros de LAS", tookOut: "Retirado por usted", bankOk: "Conciliado con el banco el {d}", bankNo: "Revisión bancaria del {d}: en conciliación",
+      walletYours: "El House Wallet es su cuenta y usted la controla en todo momento. Liaison Asset Services registra lo que entra y sale, y guarda los comprobantes.",
+      walletPaused: "Los pagos desde el House Wallet están en pausa durante la Pausa de temporada.",
+      withdrawal: "Retirado por usted", depositsW: "Depósitos y retiros",
+      glossary: "Qué significan nuestras palabras", gl1: "Palabras de este panel", gl2: "Qué significan nuestros servicios",
+      md: ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"]
+    }
+  };
+
+  // The fixed words of a Portfolio (the dropdown choices), in Spanish.
+  var WORDS = {
+    "Stable": "Estable", "Attention": "Atención", "Immediate Action": "Acción inmediata",
+    "Open": "Abierto", "Watching": "En observación", "Scheduled": "Programado", "Vendor Reported Complete": "El proveedor reporta terminado",
+    "Verified Complete": "Verificado y terminado", "Closed": "Cerrado", "Complete": "Terminado",
+    "Routine": "Rutina", "Urgent": "Urgente", "Emergency": "Emergencia",
+    "Waiting for Owner": "En espera del propietario", "Approved": "Aprobado", "Deferred": "Pospuesto", "Request Another Option": "Pidió otra opción",
+    "Owner Direct": "Pago directo del propietario", "House Wallet": "House Wallet", "LAS Service Billing": "Facturación de servicios LAS", "N/A": "N/A",
+    "Paid": "Pagado", "Pending": "Pendiente", "Due": "Por pagar",
+    "Owner Reported": "Informado por el propietario", "Document Verified": "Verificado con documento", "Field Verified": "Verificado en sitio", "Unknown": "Desconocido",
+    "Maintenance": "Mantenimiento", "Repair": "Reparación", "Utility": "Servicios públicos", "Tax": "Impuestos", "Service": "Servicio", "Other": "Otro",
+    "Time on Site": "Tiempo en sitio",
+    "Simple": "Simple", "Standard": "Estándar", "Enhanced": "Ampliado", "Planned": "Planeado", "In Progress": "En curso", "On Hold": "En pausa",
+    "Cancelled": "Cancelado", "Completed": "Terminado", "Call me first": "Llámenme primero"
+  };
+
+  // Plain-language definitions. Every service word an owner meets is explained here, in both languages.
+  var GLOSS = {
+    en: [
+      ["Property Portfolio", "The organized record of your property: what it is, its systems, what has happened, what was paid, and the documents that prove it."],
+      ["Property stable, Needs attention, Immediate action", "Our overall reading of the property today. Stable: nothing needs you. Needs attention: something is being worked on. Immediate action: something cannot wait."],
+      ["Open item", "A concern we keep visible until it is resolved, deferred or closed."],
+      ["Owner decision", "Something only you can decide. You can approve it, defer it, ask for another option, or ask us to call you first."],
+      ["Repair", "Routine upkeep that keeps the home working as it is, such as fixing a leak or replacing a failed part. One repair has two visits: a first look and a close-out."],
+      ["Project", "An upgrade or renovation, such as a new roof or a remodeled bathroom. Project Oversight is a separate, short-term service of up to 30 days, and it never uses the visits included in your plan."],
+      ["Included visit", "A scheduled visit that is part of your plan. LAS schedules and routes it. Visits not used in a cycle do not carry over."],
+      ["Additional visit", "A visit outside the ones included in your plan. It is billed by the hour, plus a flat travel charge for where the property is."],
+      ["Field verification", "A visit to document the visible progress of a project with photos and notes. It is not a technical inspection."],
+      ["Repair verification", "Documenting visible completion after reported work. It is not a technical inspection unless that is separately agreed."],
+      ["House Wallet", "An account that is yours and that you control at all times, used for property expenses you have approved. LAS records what goes in and out and keeps the proof. LAS never has sole possession of the money."],
+      ["Preapproved limit", "The most LAS may pay for one bill in a category without asking you first. A larger bill comes to you as a decision."],
+      ["Seasonal Hold", "A pause in active service while your record is kept for later. Available on the Active and Liaison plans."],
+      ["Owner-in-Residence", "You are staying at the property. Your plan continues, and included visits may be put to other approved tasks."],
+      ["Service interruption", "LAS could not deliver an included service. We reschedule it, substitute it, or credit you."],
+      ["Owner Reported, Document Verified, Field Verified, Unknown", "Where a fact in your record came from: you told us, a document shows it, we saw it at the property, or it is still to be verified."]
+    ],
+    en2: [
+      ["Portfolio Maintenance", "Keeping the property record current after visits, repairs, documents, payments or other activity."],
+      ["Documentation", "Recording what happened and attaching proof such as photos, receipts, invoices or service records."],
+      ["Issue Tracking", "Keeping a concern visible until it is resolved, deferred or closed."],
+      ["Structured Owner Communication", "Clear service-related updates. It is not unlimited calls, meetings or consulting."],
+      ["Field Presence", "A physical property visit to perform the agreed visual check and assigned field tasks."],
+      ["Maintenance Tracking", "Recording the last service, the next due date and the completion status of recurring property maintenance."],
+      ["Open-Item Follow-Up", "Keeping an unresolved item moving until it can be closed."],
+      ["Owner Reporting", "Summarizing what happened, what was done, what needs attention and what requires a decision."],
+      ["Virtual Coordination", "Routine property work performed without traveling to the property."],
+      ["Property Administration", "The behind-the-scenes records, schedules, vendors, bills, documents, decisions and follow-up."],
+      ["Vendor Scheduling", "Arranging an approved vendor service window, while LAS plans the routine calendar and route."],
+      ["Vendor Coordination", "Routine communication about access, scheduling, completion status and documentation. It is not technical supervision."],
+      ["House Wallet Administration", "Paying authorized property expenses from the account you fund and control, and reconciling the proof."]
+    ],
+    es: [
+      ["Portafolio de la propiedad", "El registro ordenado de su propiedad: qué es, sus sistemas, qué ha pasado, qué se pagó y los documentos que lo comprueban."],
+      ["Propiedad estable, Requiere atención, Acción inmediata", "Nuestra lectura general de la propiedad hoy. Estable: no se necesita nada de usted. Requiere atención: se está trabajando en algo. Acción inmediata: algo no puede esperar."],
+      ["Asunto abierto", "Una inquietud que mantenemos a la vista hasta que se resuelve, se pospone o se cierra."],
+      ["Decisión del propietario", "Algo que solo usted puede decidir. Puede aprobarlo, posponerlo, pedir otra opción o pedir que le llamemos primero."],
+      ["Reparación", "Mantenimiento de rutina que conserva la casa funcionando como está, por ejemplo arreglar una fuga o cambiar una pieza dañada. Una reparación tiene dos visitas: la primera revisión y el cierre."],
+      ["Proyecto", "Una mejora o renovación, por ejemplo un techo nuevo o un baño remodelado. La Supervisión de proyecto es un servicio aparte, de corto plazo y de hasta 30 días, y nunca usa las visitas incluidas en su plan."],
+      ["Visita incluida", "Una visita programada que forma parte de su plan. LAS la programa y organiza la ruta. Las visitas que no se usan en un ciclo no se acumulan."],
+      ["Visita adicional", "Una visita fuera de las incluidas en su plan. Se factura por hora, más un cargo fijo de traslado según la ubicación de la propiedad."],
+      ["Verificación en sitio", "Una visita para documentar con fotos y notas el avance visible de un proyecto. No es una inspección técnica."],
+      ["Verificación de reparación", "Documentar que el trabajo reportado se ve terminado. No es una inspección técnica, salvo que se acuerde por separado."],
+      ["House Wallet", "Una cuenta que es suya y que usted controla en todo momento, usada para los gastos de la propiedad que usted aprobó. LAS registra lo que entra y sale y guarda los comprobantes. LAS nunca tiene posesión exclusiva del dinero."],
+      ["Límite preaprobado", "Lo máximo que LAS puede pagar por una cuenta de una categoría sin consultarle antes. Una cuenta mayor le llega como una decisión."],
+      ["Pausa de temporada", "Una pausa del servicio activo mientras su registro se conserva para después. Disponible en los planes Active y Liaison."],
+      ["Propietario en la residencia", "Usted está en la propiedad. Su plan continúa, y las visitas incluidas pueden usarse para otras tareas aprobadas."],
+      ["Interrupción del servicio", "LAS no pudo prestar un servicio incluido. Lo reprogramamos, lo sustituimos o le damos un crédito."],
+      ["Informado por el propietario, Verificado con documento, Verificado en sitio, Desconocido", "De dónde viene un dato de su registro: usted nos lo dijo, un documento lo muestra, lo vimos en la propiedad, o aún está por verificar."]
+    ],
+    es2: [
+      ["Mantenimiento del Portafolio", "Mantener al día el registro de la propiedad después de visitas, reparaciones, documentos, pagos u otra actividad."],
+      ["Documentación", "Registrar lo que pasó y adjuntar comprobantes como fotos, recibos, facturas o registros de servicio."],
+      ["Seguimiento de asuntos", "Mantener una inquietud a la vista hasta que se resuelve, se pospone o se cierra."],
+      ["Comunicación estructurada con el propietario", "Avisos claros relacionados con el servicio. No son llamadas, reuniones ni consultoría ilimitadas."],
+      ["Presencia en sitio", "Una visita física a la propiedad para hacer la revisión visual acordada y las tareas de campo asignadas."],
+      ["Seguimiento de mantenimiento", "Registrar el último servicio, la próxima fecha y el estado del mantenimiento periódico de la propiedad."],
+      ["Seguimiento de asuntos abiertos", "Mantener en movimiento un asunto sin resolver hasta que se pueda cerrar."],
+      ["Informe al propietario", "Resumir qué pasó, qué se hizo, qué requiere atención y qué requiere una decisión."],
+      ["Coordinación virtual", "Trabajo de rutina de la propiedad que se hace sin viajar a ella."],
+      ["Administración de la propiedad", "Los registros, calendarios, proveedores, cuentas, documentos, decisiones y seguimiento que no se ven."],
+      ["Programación de proveedores", "Acordar la fecha de servicio de un proveedor aprobado, mientras LAS planea el calendario y la ruta de rutina."],
+      ["Coordinación de proveedores", "Comunicación de rutina sobre acceso, fechas, estado del trabajo y documentación. No es supervisión técnica."],
+      ["Administración del House Wallet", "Pagar los gastos autorizados de la propiedad desde la cuenta que usted financia y controla, y conciliar los comprobantes."]
+    ]
+  };
+
+  // Everything the page knows right now. render() draws the screen from this.
+  var S = { lang: "en", key: "", tok: "", view: "loading", arg: null, info: {}, data: null, tr: null, msg: null, busy: false, loadedAt: 0, done: null, draft: {}, badFields: [], fresh: "", flash: null };
+
+  function el(id) { return document.getElementById(id); }
+  function nowMs() { return new Date().getTime(); }
+  function esc(v) {
+    return String(v === null || v === undefined ? "" : v).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
+  function t(key, vars) {
+    var s = (T[S.lang] && T[S.lang][key]) || T.en[key] || key;
+    if (vars) { for (var k in vars) { s = s.split("{" + k + "}").join(String(vars[k])); } }
+    return s;
+  }
+  // What the office typed, in the owner's language when a translation exists.
+  function tx(text) {
+    if (text === null || text === undefined || text === "") { return ""; }
+    if (S.lang === "es" && WORDS[text]) { return WORDS[text]; }
+    if (S.tr && S.tr[text]) { return S.tr[text]; }
+    return text;
+  }
+
+  // Sign-in details stay on the phone only when the owner ticked "Keep me signed in".
+  function getStore(k) {
+    var v = "";
+    try { v = window.sessionStorage.getItem("las." + k) || ""; } catch (e) { v = ""; }
+    if (!v) { try { v = window.localStorage.getItem("las." + k) || ""; } catch (e2) { v = ""; } }
+    return v;
+  }
+  function setStore(k, v, keep) {
+    try { window.sessionStorage.setItem("las." + k, v); } catch (e) {}
+    if (keep) { try { window.localStorage.setItem("las." + k, v); } catch (e2) {} }
+  }
+  function dropStore(k) {
+    try { window.sessionStorage.removeItem("las." + k); } catch (e) {}
+    try { window.localStorage.removeItem("las." + k); } catch (e2) {}
+  }
+
+  function isDay(s) { return /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(String(s || "")); }
+  function isStamp(s) { return /^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}$/.test(String(s || "")); }
+  function day(s) {
+    if (isStamp(s)) { return stamp(s); }
+    if (!isDay(s)) { return tx(s); }
+    var y = s.substr(0, 4), m = T[S.lang].md[+s.substr(5, 2) - 1], d = +s.substr(8, 2);
+    return S.lang === "es" ? d + " " + m + " " + y : m + " " + d + ", " + y;
+  }
+  function stamp(s) {
+    if (!isStamp(s)) { return day(s); }
+    var h = +s.substr(11, 2), mi = s.substr(14, 2), h12 = h % 12;
+    if (h12 === 0) { h12 = 12; }
+    var ap = h < 12 ? (S.lang === "es" ? "a. m." : "AM") : (S.lang === "es" ? "p. m." : "PM");
+    return day(s.substr(0, 10)) + (S.lang === "es" ? ", " : " at ") + h12 + ":" + mi + " " + ap;
+  }
+  function money(n, cur) {
+    if (n === null || n === undefined || n === "") { return ""; }
+    var neg = n < 0, parts = Math.abs(Number(n)).toFixed(2).split("."), whole = parts[0], out = "";
+    while (whole.length > 3) { out = "," + whole.slice(-3) + out; whole = whole.slice(0, -3); }
+    return (cur ? cur + " " : "") + (neg ? "-" : "") + whole + out + "." + parts[1];
+  }
+  function count(n, one, many) { return n === 1 ? t(one) : t(many, { n: n }); }
+  function same(a, b) { return String(a || "").toUpperCase() === String(b || "").toUpperCase() && String(a || "") !== ""; }
+  function href(u) { return /^https:[/][/]/.test(String(u || "")) ? String(u) : ""; }
+
+  /* ---------- talking to the Sheet ---------- */
+
+  function post(body, onAnswer, onFail) {
+    var ctrl = (typeof AbortController !== "undefined") ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) { ctrl.abort(); } }, 45000);
+    var opts = { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(body), redirect: "follow" };
+    if (ctrl) { opts.signal = ctrl.signal; }
+    fetch(API, opts)
+      .then(function (r) { return r.text(); })
+      .then(function (text) {
+        clearTimeout(timer);
+        try { return JSON.parse(text); } catch (e) { return { ok: false, code: "SERVER" }; }
+      }, function () { clearTimeout(timer); return null; })
+      .then(function (j) { if (j === null) { onFail(); } else { onAnswer(j); } })
+      .then(null, function (err) {
+        // The answer arrived but the page could not draw it. Say so plainly instead of blaming the signal.
+        try { console.error(err); } catch (e) {}
+        S.busy = false; S.view = "error"; S.msg = { key: "SERVER", retry: S.tok ? load : hello };
+        try { render(); } catch (e2) {}
+      });
+  }
+
+  function take(r) {
+    if (r.biz) { S.info.biz = r.biz; }
+    if (r.pinLen) { S.info.pinLen = r.pinLen; }
+    if (r.keepDays) { S.info.keepDays = r.keepDays; }
+    if (r.wa !== undefined) { S.info.wa = r.wa; }
+    if (r.view) { S.data = r.view; S.tr = r.tr || null; S.info.now = r.now || ""; S.loadedAt = nowMs(); }
+  }
+
+  function hello() {
+    S.view = "loading"; S.msg = null; render();
+    post({ op: "hello", k: S.key }, function (r) {
+      take(r);
+      if (r.ok) {
+        if (!getStore("lang") && (r.lang === "es" || r.lang === "en")) { S.lang = r.lang; }
+        S.view = "pin"; render(); focusPin(); return;
+      }
+      stop(r.code);
+    }, function () { S.view = "error"; S.msg = { key: "NET", retry: hello }; render(); });
+  }
+
+  // A link that is not recognized shows the same private page a stranger sees.
+  function stop(code) {
+    if (code === "NO_LINK") { dropStore("k"); dropStore("tok"); S.key = ""; S.tok = ""; S.view = "private"; render(); return; }
+    if (code === "OFF") { S.view = "off"; render(); return; }
+    if (code === "SIGN_IN") { dropStore("tok"); S.tok = ""; S.data = null; S.view = "pin"; S.msg = null; render(); focusPin(); return; }
+    if (code === "NOT_READY") { S.view = "error"; S.msg = { key: "NOT_READY", retry: load }; render(); return; }
+    S.view = "error"; S.msg = { key: T.en[code] ? code : "SERVER", retry: S.tok ? load : hello }; render();
+  }
+
+  function load(quiet) {
+    if (quiet !== true) { S.view = "loading"; S.msg = null; render(); }
+    post({ op: "data", k: S.key, tok: S.tok, lang: S.lang }, function (r) {
+      take(r);
+      if (!r.ok) { stop(r.code); return; }
+      if (quiet !== true || S.view === "loading") { S.view = "home"; S.arg = null; }
+      render();
+    }, function () {
+      if (quiet === true && S.data) { return; }
+      S.view = "error"; S.msg = { key: "NET", retry: load }; render();
+    });
+  }
+
+  function signIn() {
+    if (S.busy) { return; }
+    var n = S.info.pinLen || 6;
+    var raw = String(el("pin").value || "").replace(/[^0-9]/g, "");
+    if (raw.length !== n) { return; }
+    var keep = !!el("keep").checked;
+    S.busy = true; S.msg = null; render();
+    post({ op: "signin", k: S.key, pin: raw, keep: keep, lang: S.lang }, function (r) {
+      S.busy = false;
+      take(r);
+      if (r.ok) {
+        S.tok = r.tok;
+        setStore("tok", r.tok, keep); setStore("k", S.key, keep);
+        S.view = "home"; S.arg = null; S.msg = null;
+        try { window.history.replaceState({ view: "home" }, "", window.location.pathname); } catch (e) {}
+        render(); window.scrollTo(0, 0);
+        return;
+      }
+      if (r.code === "BAD_PIN") { S.msg = { key: "BAD_PIN", vars: { n: r.left } }; S.view = "pin"; render(); focusPin(); return; }
+      if (r.code === "PAUSED") { S.msg = { key: "PAUSED", vars: { m: r.wait } }; S.view = "pin"; render(); return; }
+      stop(r.code);
+    }, function () { S.busy = false; S.msg = { key: "NET" }; S.view = "pin"; render(); });
+  }
+
+  function focusPin() { var p = el("pin"); if (p) { try { p.focus(); } catch (e) {} } }
+
+  function newId() {
+    var s = "", abc = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789";
+    for (var i = 0; i < 20; i++) { s += abc.charAt(Math.floor(Math.random() * abc.length)); }
+    return s;
+  }
+
+  function sendDecision() {
+    if (S.busy || !S.arg) { return; }
+    var d = findDecision(S.arg.id);
+    if (!d) { go("home"); return; }
+    if (!S.arg.rid) { S.arg.rid = newId(); }
+    var note = String((el("note") && el("note").value) || "").trim();
+    S.arg.note = note;
+    S.busy = true; S.msg = null; render();
+    post({
+      op: "decide", k: S.key, tok: S.tok, lang: S.lang, id: d.id, choice: S.arg.choice,
+      amount: d.amount === undefined ? null : d.amount, cur: d.cur || "", note: note, rid: S.arg.rid
+    }, function (r) {
+      S.busy = false;
+      take(r);
+      if (r.ok && r.done) {
+        // Step back from the confirmation to the decision, which now shows what was recorded.
+        S.done = r.done; S.fresh = r.done.id;
+        stepBack();
+        return;
+      }
+      if (r.code === "SIGN_IN" || r.code === "NO_LINK" || r.code === "OFF") { stop(r.code); return; }
+      if (!r.view) { S.msg = { key: T.en[r.code] ? r.code : "SERVER", kind: "bad" }; render(); return; }
+      S.flash = { key: T.en[r.code] ? r.code : "SERVER", kind: (r.code === "ALREADY") ? "warn" : "bad" };
+      stepBack();
+    }, function () { S.busy = false; S.msg = { key: "NET", kind: "bad" }; render(); });
+  }
+
+  /* ---------- moving between screens ---------- */
+
+  function go(view, arg) {
+    S.view = view; S.arg = arg || null; S.msg = null; S.badFields = []; S.draft = {};
+    try { window.history.pushState({ view: view, arg: arg || null }, "", window.location.pathname); } catch (e) {}
+    render(); window.scrollTo(0, 0);
+  }
+  window.addEventListener("popstate", function (ev) {
+    if (!S.data || !S.tok) { return; }
+    var st = ev.state || { view: "home" };
+    S.view = st.view || "home"; S.arg = st.arg || null; S.msg = S.flash || null; S.flash = null;
+    S.badFields = []; S.draft = {};
+    render(); window.scrollTo(0, 0);
+  });
+  // One step back in the phone's own history, so its back button never returns to a finished form.
+  function stepBack() {
+    try { window.history.back(); } catch (e) { S.view = "home"; S.arg = null; S.msg = S.flash || null; S.flash = null; render(); }
+  }
+
+  function findDecision(id) {
+    var L = (S.data && S.data.decisions) || [];
+    for (var i = 0; i < L.length; i++) { if (same(L[i].id, id)) { return L[i]; } }
+    return null;
+  }
+
+  /* ---------- drawing ---------- */
+
+  function render() {
+    document.documentElement.lang = S.lang;
+    el("lang").textContent = t("other");
+    var bare = S.view === "private" || S.view === "off" || S.view === "pin" || S.view === "loading" || S.view === "error";
+    el("bar").hidden = bare;
+    var h = "";
+    if (S.view === "loading") { h = centered("", "<p>" + esc(t("loading")) + "</p>"); }
+    else if (S.view === "private") { h = centered(T.en.privTitle, "<p>" + esc(T.en.privText) + "</p><p>" + esc(T.es.privText) + "</p>"); }
+    else if (S.view === "off") { h = centered("", "<p>" + esc(T.en.offText) + "</p><p>" + esc(T.es.offText) + "</p>" + waButton()); }
+    else if (S.view === "error") {
+      h = centered("", "<p>" + esc(t(S.msg.key)) + "</p><button type='button' class='btn navy' data-act='retry'>" + esc(t("retry")) + "</button>" +
+        (S.msg.key === "NOT_READY" ? waButton() : ""));
+    }
+    else if (S.view === "pin") { h = pinView(); }
+    else if (!S.data) { h = centered("", "<p>" + esc(t("loading")) + "</p>"); }
+    else if (S.view === "home") { h = homeView(); }
+    else if (S.view === "decision") { h = decisionView(); }
+    else if (S.view === "confirm") { h = confirmView(); }
+    else if (S.view === "intake" && S.data.intake) { h = intakeView(); }
+    else if (S.view === "intakeSec" && S.data.intake) { h = intakeSecView(); }
+    else { h = listView(); }
+    el("app").innerHTML = h;
+    document.title = (S.data && !bare ? S.data.prop.name + " - " : "") + (S.info.biz || "Liaison Asset Services");
+  }
+
+  function centered(title, inner) {
+    return "<div class='wrap center'><img src='" + LOGO + "' alt='Liaison Asset Services'>" +
+      (title ? "<h1 class='serif'>" + esc(title) + "</h1>" : "") + inner + "</div>";
+  }
+
+  function waButton() {
+    var n = String(S.info.wa || "").replace(/[^0-9]/g, "");
+    if (!n) { return ""; }
+    return "<a class='btn' href='https://wa.me/" + n + "' target='_blank' rel='noopener noreferrer'>" + esc(t("wa")) + "</a>";
+  }
+
+  function msgBox() {
+    if (!S.msg) { return ""; }
+    return "<div class='box " + (S.msg.kind || "bad") + "' role='alert'>" + esc(t(S.msg.key, S.msg.vars)) + "</div>";
+  }
+
+  function pinView() {
+    var n = S.info.pinLen || 6, d = S.info.keepDays || 30;
+    var paused = S.msg && S.msg.key === "PAUSED";
+    return "<div class='wrap center'><img src='" + LOGO + "' alt='Liaison Asset Services'>" +
+      "<h1 class='serif'>" + esc(t("welcome")) + "</h1><p><label for='pin'>" + esc(t("pinAsk", { n: n })) + "</label></p>" +
+      "<input class='pin' id='pin' type='password' inputmode='numeric' autocomplete='off' maxlength='" + n + "'" + (S.busy || paused ? " disabled" : "") + ">" +
+      "<label class='check'><input type='checkbox' id='keep' checked> " + esc(t("keep", { d: d })) + "</label>" +
+      msgBox() +
+      "<button type='button' class='btn navy' data-act='signin'" + (S.busy || paused ? " disabled" : "") + ">" + esc(S.busy ? t("loading") : t("go")) + "</button>" +
+      "<p style='margin-top:22px'><button type='button' class='link' data-act='lang'>" + esc(t("other")) + "</button></p></div>";
+  }
+
+  function pill(status) {
+    var s = String(status || "");
+    if (!s) { return ""; }
+    var cls = "s", key = "st_Stable";
+    if (s === "Attention") { cls = "a"; key = "st_Attention"; }
+    else if (s === "Immediate Action") { cls = "r"; key = "st_Immediate"; }
+    else if (s !== "Stable") { return "<span class='pill a'><i></i>" + esc(tx(s)) + "</span>"; }
+    return "<span class='pill " + cls + "'><i></i>" + esc(t(key)) + "</span>";
+  }
+
+  function tile(label, value, goTo, cls) {
+    return "<button type='button' class='tile " + (cls || "") + "' data-go='" + goTo + "'><small>" + esc(label) + "</small><span>" + value + "</span></button>";
+  }
+
+  function hero() {
+    var p = S.data.prop;
+    return "<section class='hero'><div class='wrap'>" + (p.level ? "<div class='level'>" + esc(p.level) + "</div>" : "") +
+      "<h1 class='serif'>" + esc(p.name) + "</h1>" + (p.loc ? "<div class='loc'>" + esc(p.loc) + "</div>" : "") + "</div></section>";
+  }
+
+  // Bills the owner pays directly and that are not paid yet.
+  function ownerBills() {
+    var L = (S.data && S.data.ledger) || [], out = [];
+    for (var i = 0; i < L.length; i++) {
+      if (L[i].bill && !L[i].isPaid && !L[i].fromWallet && String(L[i].method || "").toLowerCase() === "owner direct") { out.push(L[i]); }
+    }
+    return out;
+  }
+  function waitingDecisions() {
+    var L = (S.data && S.data.decisions) || [], out = [];
+    for (var i = 0; i < L.length; i++) { if (L[i].waiting) { out.push(L[i]); } }
+    return out;
+  }
+
+  // Seasonal Hold, Owner-in-Residence or Service interruption, said plainly with its dates.
+  function modeBox() {
+    var p = S.data.prop;
+    if (!p.mode || !T.en["mode_" + p.mode]) { return ""; }
+    var when = "";
+    if (p.modeFrom && p.modeUntil) { when = t("sinceUntil", { a: day(p.modeFrom), b: day(p.modeUntil) }); }
+    else if (p.modeFrom) { when = t("since", { d: day(p.modeFrom) }); }
+    else if (p.modeUntil) { when = t("until", { d: day(p.modeUntil) }); }
+    return "<div class='box warn' style='margin:0 0 14px'><b>" + esc(t("mode_" + p.mode)) + "</b>" + (when ? " · " + esc(when) : "") + "<br>" + esc(t("modeP_" + p.mode)) + "</div>";
+  }
+
+  function visitsLine() {
+    var V = S.data.visits;
+    if (!V) { return ""; }
+    return "<p class='hint'>" + esc(t("visitsLine", { a: day(V.from), b: day(V.to), u: V.used, n: V.included })) + "</p>";
+  }
+
+  function projectKey(pj) { return pj.id || ("row" + pj.row); }
+  function findProject(key) {
+    var L = (S.data && S.data.projects) || [];
+    for (var i = 0; i < L.length; i++) { if (same(projectKey(L[i]), key)) { return L[i]; } }
+    return null;
+  }
+  function projectProgress(pj) {
+    var out = [];
+    if (pj.days !== undefined) {
+      if (!pj.active) { out.push(t("pRan", { d: pj.days })); }
+      else if (pj.limitDays) { out.push(t("pDays", { d: pj.days, n: pj.limitDays })); }
+      else { out.push(t("pDaysOpen", { d: pj.days })); }
+    }
+    if (pj.checksIncluded !== undefined) { out.push(t("pChecks", { u: pj.checksUsed || 0, n: pj.checksIncluded })); }
+    return out;
+  }
+  function projectCard(pj) {
+    var prog = projectProgress(pj);
+    return "<div class='card'><div class='t'>" + esc(tx(pj.name)) + "</div>" +
+      "<div style='margin-top:6px'>" + statusTag(pj.status) + (pj.level ? "<span class='tag'>" + esc(tx(pj.level)) + "</span>" : "") + "</div>" +
+      (prog.length ? "<div class='r'>" + esc(prog.join(" · ")) + "</div>" : "") +
+      noteBox(t("pUpdate"), pj.update) +
+      "<button type='button' class='btn' data-go='project' data-arg='" + esc(projectKey(pj)) + "'>" + esc(t("viewProject")) + "</button></div>";
+  }
+  function projectCards(activeOnly) {
+    var L = S.data.projects || [], h = "";
+    for (var i = 0; i < L.length; i++) { if (!activeOnly || L[i].active) { h += projectCard(L[i]); } }
+    return h;
+  }
+
+  function foot(withGlossary) {
+    return "<div class='foot'>" + esc(t("signedAs", { name: S.data.owner.name })) + " · <button type='button' class='link' data-act='signout'>" + esc(t("signOut")) + "</button>" +
+      (withGlossary ? "<br><button type='button' class='link' data-go='glossary' style='margin-top:10px'>" + esc(t("glossary")) + "</button>" : "") + "</div>";
+  }
+
+  function homeView() {
+    var D = S.data, p = D.prop, k = D.kpi, h = hero() + "<div class='wrap pad'>";
+    var kind = p.kind || (p.ongoing ? "steward" : "record");
+    h += msgBox();
+    if (p.pending) {
+      h += "<div class='box warn'><b>" + esc(t(kind === "project" ? "pendingT_project" : "pendingT")) + "</b><br>" + esc(t("pendingP")) + "</div>" + intakeCard() + waButton() + foot(true);
+      return h + "</div>";
+    }
+    if (D.status) { h += "<div>" + pill(D.status) + "</div>"; }
+    h += "<div class='live'><span><b></b>" + esc(t("live")) + (S.info.now ? " · " + esc(stamp(S.info.now)) : "") + "</span>" +
+      "<button type='button' class='link' data-act='refresh'>" + esc(t("refresh")) + "</button></div>";
+    h += modeBox();
+
+    h += intakeCard();
+    var held = p.mode === "hold";
+    // During a Seasonal Hold decisions are paused, so they are shown but not counted as needed.
+    var bills = ownerBills(), waiting = waitingDecisions(), needed = (p.decisions && !held ? waiting.length : 0) + bills.length;
+    if (kind === "steward" && k) {
+      h += "<div class='tiles'>";
+      h += tile(t("lastVisit"), esc(k.lastVisit ? day(k.lastVisit) : t("noneYet")), "visits");
+      h += tile(t("nextVisit"), esc(held ? t("paused") : (k.nextVisit ? day(k.nextVisit) : t("notSet"))), "visits");
+      h += tile(t("openItems"), String(k.open), "open");
+      h += tile(t("needTile"), needed ? String(needed) : esc(t("nothingNeeded")), "needed", needed ? "you" : "");
+      h += tile(t("upcoming"), String(k.upcoming), "upcoming", (p.wallet && D.wallet) ? "" : "wide");
+      if (p.wallet && D.wallet) {
+        var lines = [];
+        for (var i = 0; i < D.wallet.byCur.length; i++) { lines.push(esc(money(D.wallet.byCur[i].balance, D.wallet.byCur[i].cur))); }
+        h += tile(t("wallet"), lines.join("<br>") || esc(money(0, "")), "wallet");
+      }
+      h += "</div>" + visitsLine() + "<p class='hint'>" + esc(t("tapHint")) + "</p>";
+    } else if (kind === "project") {
+      h += "<p style='margin:14px 0 0'>" + esc(t("projectHome")) + "</p>";
+    } else {
+      h += "<div class='box warn'><b>" + esc(p.delivered ? t("delivered", { d: day(p.delivered) }) : t("deliveredNo")) + "</b><br>" + esc(t("oneTime")) + "</div>";
+    }
+
+    // Projects: upgrades and renovations under Project Oversight.
+    var liveProjects = projectCards(true);
+    if (kind === "project") {
+      h += "<div class='sec'><h2>" + esc(t("projects")) + "</h2>" + (projectCards(false) || "<p class='empty'>" + esc(t("noProjects")) + "</p>") + "</div>";
+    } else if (liveProjects) {
+      h += "<div class='sec'><h2>" + esc(t("activeProjects")) + "</h2>" + liveProjects + "</div>";
+    }
+
+    var blocks = ["happened", "did", "attention"];
+    for (var b = 0; b < blocks.length; b++) {
+      if (D.story[blocks[b]]) { h += "<div class='sec'><h2>" + esc(t(blocks[b])) + "</h2><p>" + esc(tx(D.story[blocks[b]])) + "</p></div>"; }
+    }
+    if (p.decisions || bills.length) {
+      h += "<div class='sec'><h2>" + esc(t("need")) + "</h2>";
+      if (D.story.decide) { h += "<p>" + esc(tx(D.story.decide)) + "</p>"; }
+      else if (!needed) { h += "<p>" + esc(t("noNeed")) + "</p>"; }
+      if (p.decisions) { for (var w = 0; w < waiting.length; w++) { h += decisionCard(waiting[w]); } }
+      if (bills.length) {
+        h += "<div class='rows'><button type='button' data-go='needed'>" + esc(t("billsForYou")) + "<span>" + bills.length + " ›</span></button></div>";
+      }
+      h += "</div>";
+    }
+
+    h += "<div class='sec'><h2>" + esc(t("record")) + "</h2><div class='rows'>";
+    var row = function (label, n, view, one, many) {
+      if (kind === "project" && n === 0) { return ""; }
+      return "<button type='button' data-go='" + view + "'>" + esc(label) + "<span>" + (n === null ? "" : esc(count(n, one || "entry", many || "entries")) + " ") + "›</span></button>";
+    };
+    if ((D.projects || []).length && kind !== "project") { h += row(t("projects"), D.projects.length, "projects"); }
+    h += row(t("activity"), D.activity.length, "activity");
+    h += row(t("systems"), D.systems.length, "systems", "item1", "items");
+    h += row(t("ledger"), D.ledger.length, "ledger");
+    if (p.wallet && D.wallet) { h += row(t("wallet"), null, "wallet"); }
+    if (p.decisions) { h += row(t("decisions"), D.decisions.length, "decisions"); }
+    h += row(t("files"), D.files.length, "files");
+    h += row(t("vendors"), D.vendors.length, "vendors");
+    h += row(t("precord"), null, "precord");
+    h += row(t("glossary"), null, "glossary");
+    h += "</div></div>";
+
+    h += waButton() + foot();
+    return h + "</div>";
+  }
+
+  function decisionCard(d) {
+    var h = "<div class='card'><div class='t'>" + esc(tx(d.issue)) + "</div>";
+    if (d.rec) { h += "<div class='r'>" + esc(t("rec")) + ": " + esc(tx(d.rec)) + "</div>"; }
+    if (d.amount !== undefined) { h += "<div class='amt'>" + esc(money(d.amount, d.cur)) + "</div>"; }
+    if (called(d)) { h += "<div style='margin-top:6px'><span class='tag w'>" + esc(t("callTag")) + "</span></div>"; }
+    h += "<div class='more'><button type='button' class='link' data-go='decision' data-arg='" + esc(d.id) + "'>" + esc(t("view")) + "</button></div>";
+    h += choiceButtons(d);
+    return h + "</div>";
+  }
+
+  // The owner asked for a call before deciding. The decision itself stays open.
+  function called(d) {
+    if (!d.waiting) { return ""; }
+    if (d.called) { return d.called; }
+    return (S.done && S.done.choice === "call" && same(S.done.id, d.id)) ? (S.done.when || "yes") : "";
+  }
+
+  function choiceButtons(d) {
+    if (!d.waiting) { return ""; }
+    if (!S.data.owner.canDecide) { return "<div class='hint'>" + esc(t(S.data.prop.mode === "hold" ? "holdDecisions" : "viewOnly")) + "</div>"; }
+    var id = esc(d.id);
+    return "<button type='button' class='btn navy' data-choice='approve' data-arg='" + id + "'>" + esc(t("approve")) + "</button>" +
+      "<button type='button' class='btn' data-choice='defer' data-arg='" + id + "'>" + esc(t("defer")) + "</button>" +
+      "<button type='button' class='btn' data-choice='other' data-arg='" + id + "'>" + esc(t("other2")) + "</button>" +
+      (called(d) ? "" : "<button type='button' class='btn' data-choice='call' data-arg='" + id + "'>" + esc(t("call")) + "</button>");
+  }
+
+  function head(title, sub) {
+    return "<div class='wrap pad'><button type='button' class='back' data-act='back'>‹ " + esc(t("back")) + "</button>" +
+      "<h1 class='title serif'>" + esc(title) + "</h1><p class='sub'>" + esc(S.data.prop.name) + (sub ? " · " + esc(sub) : "") + "</p>" + msgBox();
+  }
+
+  function statusTag(s) {
+    if (!s) { return ""; }
+    var cls = "";
+    if (s === "Open" || s === "Watching" || s === "Vendor Reported Complete" || s === "Waiting for Owner" || s === "Attention" || s === "Pending" || s === "Due") { cls = "w"; }
+    if (s === "Verified Complete" || s === "Closed" || s === "Complete" || s === "Approved" || s === "Paid" || s === "Stable") { cls = "g"; }
+    if (s === "Immediate Action") { cls = "r"; }
+    return "<span class='tag " + cls + "'>" + esc(tx(s)) + "</span>";
+  }
+
+  function noteBox(label, text) {
+    if (!text) { return ""; }
+    return "<div class='note'><b>" + esc(label) + "</b>" + esc(tx(text)) + "</div>";
+  }
+
+  function proofLine(text, url) {
+    var u = href(url);
+    if (!text && !u) { return ""; }
+    if (u) { return "<div class='more'>" + esc(t("proof")) + ": <a href='" + esc(u) + "' target='_blank' rel='noopener noreferrer'>" + esc(text ? tx(text) : t("open")) + "</a></div>"; }
+    return "<div class='more'>" + esc(t("proof")) + ": " + esc(tx(text)) + "</div>";
+  }
+
+  // The records that share a reference: the decision, its files, its ledger line.
+  function relatedLine(ref, skipDecision) {
+    if (!ref) { return ""; }
+    var D = S.data, out = [], i;
+    var d = findDecision(ref);
+    if (d && !skipDecision) { out.push("<button type='button' class='link' data-go='decision' data-arg='" + esc(d.id) + "'>" + esc(t("decisionT")) + " " + esc(d.id) + "</button>"); }
+    var pj = findProject(ref) || (d && d.ref ? findProject(d.ref) : null);
+    if (pj && !skipDecision && S.view !== "project") { out.push("<button type='button' class='link' data-go='project' data-arg='" + esc(projectKey(pj)) + "'>" + esc(t("pId")) + ": " + esc(tx(pj.name)) + "</button>"); }
+    for (i = 0; i < D.files.length; i++) {
+      if (!same(D.files[i].ref, ref)) { continue; }
+      var u = href(D.files[i].url), label = esc(tx(D.files[i].desc || D.files[i].type));
+      out.push(u ? "<a href='" + esc(u) + "' target='_blank' rel='noopener noreferrer'>" + label + "</a>" : label);
+    }
+    if (!out.length) { return ""; }
+    return "<div class='more'>" + esc(t(skipDecision ? "proof" : "related")) + ": " + out.join(" · ") + "</div>";
+  }
+
+  function activityItem(a, plain) {
+    var meta = [day(a.date), tx(a.type)];
+    if (a.who) { meta.push(a.who); }
+    if (a.hours !== undefined) { meta.push(t("hoursOn", { h: a.hours })); }
+    if (a.cost !== undefined) { meta.push(money(a.cost, a.cur)); }
+    return "<div class='item'><div class='h'>" + esc(tx(a.summary)) + "</div><div class='m'>" + esc(meta.join(" · ")) + "</div>" +
+      statusTag(a.status) + (a.priority && a.priority !== "Routine" ? "<span class='tag'>" + esc(tx(a.priority)) + "</span>" : "") +
+      (a.vclass && T.en["vc_" + a.vclass] ? "<span class='tag'>" + esc(t("vc_" + a.vclass)) + "</span>" : "") +
+      noteBox(t("nextStep"), a.next) + proofLine(a.evidence, a.url) + (plain === true ? "" : relatedLine(a.ref)) + "</div>";
+  }
+
+  function systemItem(s) {
+    var meta = [];
+    if (s.location) { meta.push(tx(s.location)); }
+    if (s.due) { meta.push(isDay(s.due) ? t("due", { d: day(s.due) }) : tx(s.due)); }
+    var files = [], D = S.data;
+    for (var i = 0; i < D.files.length; i++) {
+      if (!same(D.files[i].related, s.item)) { continue; }
+      var u = href(D.files[i].url), label = esc(tx(D.files[i].desc || D.files[i].type));
+      files.push(u ? "<a href='" + esc(u) + "' target='_blank' rel='noopener noreferrer'>" + label + "</a>" : label);
+    }
+    return "<div class='item'><div class='h'>" + esc(tx(s.item || s.system)) + "</div><div class='m'>" + esc([tx(s.system)].concat(meta).join(" · ")) + "</div>" +
+      statusTag(s.status) + (s.task ? "<span class='tag'>" + esc(tx(s.task)) + "</span>" : "") +
+      (s.last ? "<div class='more'>" + esc(t("lastAction")) + ": " + esc(day(s.last)) + (s.source ? " (" + esc(tx(s.source)) + ")" : "") + "</div>" : "") +
+      noteBox(t("notes"), s.notes) +
+      (files.length ? "<div class='more'>" + esc(t("proof")) + ": " + files.join(" · ") + "</div>" : "") + "</div>";
+  }
+
+  function ledgerItem(e, plain) {
+    var meta = [day(e.date)];
+    if (e.category) { meta.push(tx(e.category)); }
+    if (e.payee) { meta.push(e.payee); }
+    var when = "";
+    if (e.isPaid && e.paid) { when = t("paidOn", { d: day(e.paid) }); }
+    else if (!e.isPaid && e.due) { when = t("dueOn", { d: day(e.due) }); }
+    return "<div class='item'><div class='h'>" + esc(tx(e.desc)) + "</div><div class='m'>" + esc(meta.join(" · ")) + "</div>" +
+      (e.amount !== undefined ? "<div class='amt' style='font-size:18px'>" + esc(money(e.amount, e.cur)) + "</div>" : "") +
+      "<div style='margin-top:6px'>" + statusTag(e.status) + (e.method && e.method !== "N/A" ? "<span class='tag'>" + esc(t(e.isPaid ? "paidBy" : "payFrom")) + ": " + esc(tx(e.method)) + "</span>" : "") + "</div>" +
+      (when ? "<div class='more'>" + esc(when) + "</div>" : "") +
+      noteBox(t("notes"), e.notes) + proofLine("", e.url) + (plain === true ? "" : relatedLine(e.ref)) + "</div>";
+  }
+
+  function listOf(rows, fn, emptyKey) {
+    if (!rows.length) { return "<p class='empty'>" + esc(t(emptyKey || "nothing")) + "</p>"; }
+    var h = "";
+    for (var i = 0; i < rows.length; i++) { h += fn(rows[i], false); }
+    return h;
+  }
+
+  function listView() {
+    var D = S.data, v = S.view, i, rows = [], h = "";
+    if (v === "open") {
+      for (i = 0; i < D.activity.length; i++) { if (D.activity[i].open) { rows.push(D.activity[i]); } }
+      return head(t("openItems"), count(rows.length, "item1", "items")) + listOf(rows, activityItem, "nothingOpen") + "</div>";
+    }
+    if (v === "visits") {
+      for (i = 0; i < D.activity.length; i++) { if (D.activity[i].vclass || /visit/i.test(D.activity[i].type || "")) { rows.push(D.activity[i]); } }
+      return head(t("visits"), count(rows.length, "entry", "entries")) + visitsLine() + listOf(rows, activityItem) + "</div>";
+    }
+    if (v === "needed") {
+      var bills = ownerBills(), wait = D.prop.decisions ? waitingDecisions() : [];
+      h = head(t("need"), count(bills.length + (D.prop.mode === "hold" ? 0 : wait.length), "item1", "items"));
+      if (!bills.length && !wait.length) { return h + "<p class='empty'>" + esc(t("noNeed")) + "</p></div>"; }
+      if (wait.length) {
+        h += "<div class='sec'><h2>" + esc(t("decisionsWaiting")) + "</h2>";
+        for (i = 0; i < wait.length; i++) { h += decisionCard(wait[i]); }
+        h += "</div>";
+      }
+      if (bills.length) { h += "<div class='sec'><h2>" + esc(t("billsForYou")) + "</h2>" + listOf(bills, ledgerItem) + "</div>"; }
+      return h + "</div>";
+    }
+    if (v === "projects") {
+      var live = "", past = "";
+      for (i = 0; i < (D.projects || []).length; i++) { if (D.projects[i].active) { live += projectCard(D.projects[i]); } else { past += projectCard(D.projects[i]); } }
+      h = head(t("projects"), count((D.projects || []).length, "entry", "entries"));
+      if (!live && !past) { return h + "<p class='empty'>" + esc(t("noProjects")) + "</p></div>"; }
+      if (live) { h += "<div class='sec'><h2>" + esc(t("activeProjects")) + "</h2>" + live + "</div>"; }
+      if (past) { h += "<div class='sec'><h2>" + esc(t("pastProjects")) + "</h2>" + past + "</div>"; }
+      return h + "</div>";
+    }
+    if (v === "project") { return projectView(); }
+    if (v === "glossary") {
+      var G1 = GLOSS[S.lang] || GLOSS.en, G2 = GLOSS[S.lang + "2"] || GLOSS.en2;
+      h = head(t("glossary"), "") + "<div class='sec'><h2>" + esc(t("gl1")) + "</h2><div class='kv'>";
+      for (i = 0; i < G1.length; i++) { h += "<b>" + esc(G1[i][0]) + "</b><div>" + esc(G1[i][1]) + "</div>"; }
+      h += "</div></div><div class='sec'><h2>" + esc(t("gl2")) + "</h2><div class='kv'>";
+      for (i = 0; i < G2.length; i++) { h += "<b>" + esc(G2[i][0]) + "</b><div>" + esc(G2[i][1]) + "</div>"; }
+      return h + "</div></div></div>";
+    }
+    if (v === "activity") { return head(t("activity"), count(D.activity.length, "entry", "entries")) + listOf(D.activity, activityItem) + "</div>"; }
+    if (v === "upcoming") {
+      for (i = 0; i < D.systems.length; i++) { if (D.systems[i].upcoming) { rows.push(D.systems[i]); } }
+      rows.sort(function (a, b) { return a.due < b.due ? -1 : a.due > b.due ? 1 : 0; });
+      return head(t("upcoming"), count(rows.length, "item1", "items")) + listOf(rows, systemItem, "nothingUp") + "</div>";
+    }
+    if (v === "systems") { return head(t("systems"), count(D.systems.length, "item1", "items")) + listOf(D.systems, systemItem) + "</div>"; }
+    if (v === "ledger") { return ledgerView(); }
+    if (v === "wallet" && D.wallet) { return walletView(); }
+    if (v === "decisions") {
+      rows = D.decisions.slice().sort(function (a, b) { return (a.waiting ? 0 : 1) - (b.waiting ? 0 : 1); });
+      return head(t("decisions"), count(rows.length, "entry", "entries")) + listOf(rows, function (d) {
+        return "<div class='item'><div class='h'>" + esc(tx(d.issue)) + "</div><div class='m'>" + esc([d.id, d.opened ? t("openedOn", { d: day(d.opened) }) : "", d.amount !== undefined ? money(d.amount, d.cur) : ""].filter(Boolean).join(" · ")) + "</div>" +
+          statusTag(d.status) + (called(d) ? "<span class='tag w'>" + esc(t("callTag")) + "</span>" : "") + (d.decided ? "<div class='more'>" + esc(t("recorded", { t: stamp(d.decided) })) + "</div>" : "") +
+          "<div class='more'><button type='button' class='link' data-go='decision' data-arg='" + esc(d.id) + "'>" + esc(t("view")) + "</button></div></div>";
+      }) + "</div>";
+    }
+    if (v === "files") {
+      return head(t("files"), count(D.files.length, "entry", "entries")) + listOf(D.files, function (f) {
+        var u = href(f.url);
+        return "<div class='item'><div class='h'>" + esc(tx(f.desc)) + "</div><div class='m'>" + esc([day(f.date), tx(f.type), tx(f.related)].filter(Boolean).join(" · ")) + "</div>" +
+          (f.source ? "<span class='tag'>" + esc(tx(f.source)) + "</span>" : "") +
+          (f.keep ? "<div class='more'>" + esc(t("keepNote")) + ": " + esc(tx(f.keep)) + "</div>" : "") +
+          (u ? "<a class='btn' href='" + esc(u) + "' target='_blank' rel='noopener noreferrer'>" + esc(t("open")) + "</a>" : "") + relatedLine(f.ref) + "</div>";
+      }) + "</div>";
+    }
+    if (v === "vendors") {
+      return head(t("vendors"), "") + listOf(D.vendors, function (x) {
+        return "<div class='item'><div class='h'>" + esc(x.vendor || tx(x.trade)) + "</div><div class='m'>" + esc([tx(x.trade), x.last ? t("lastUsed", { d: day(x.last) }) : ""].filter(Boolean).join(" · ")) + "</div>" +
+          (x.status ? "<span class='tag'>" + esc(tx(x.status)) + "</span>" : "") + (x.source ? "<span class='tag'>" + esc(tx(x.source)) + "</span>" : "") +
+          noteBox(t("notes"), x.notes) + "</div>";
+      }) + "</div>";
+    }
+    if (v === "precord") {
+      h = head(t("precord"), "") + "<div class='kv'>";
+      for (i = 0; i < D.record.length; i++) { h += "<b>" + esc(tx(D.record[i].label)) + "</b><div>" + esc(day(D.record[i].value)) + "</div>"; }
+      h += "</div>";
+      if (D.setup.length) {
+        h += "<div class='sec'><h2>" + esc(t("setup")) + "</h2><div class='kv'>";
+        for (i = 0; i < D.setup.length; i++) {
+          h += "<b>" + esc(tx(D.setup[i].label)) + "</b><div>" + esc(day(D.setup[i].value)) + (D.setup[i].source ? " <span class='tag'>" + esc(tx(D.setup[i].source)) + "</span>" : "") + "</div>";
+        }
+        h += "</div></div>";
+      }
+      return h + "</div>";
+    }
+    S.view = "home";
+    return homeView();
+  }
+
+  function ledgerView() {
+    var D = S.data, toPay = [], paid = [], i;
+    for (i = 0; i < D.ledger.length; i++) {
+      if (!D.ledger[i].bill) { continue; }
+      if (D.ledger[i].isPaid) { paid.push(D.ledger[i]); } else { toPay.push(D.ledger[i]); }
+    }
+    toPay.sort(function (a, b) { return a.due < b.due ? -1 : a.due > b.due ? 1 : 0; });
+    var h = head(t("ledger"), count(D.ledger.length, "entry", "entries"));
+    if (toPay.length || paid.length) {
+      h += "<div class='sec'><h2>" + esc(t("bills")) + " · " + esc(t("toPay")) + "</h2>" + listOf(toPay, function (e) {
+        return ledgerItem(e).replace("<div class='item'>", "<div class='item'><span class='tag w'>" + esc(e.fromWallet ? t("byWallet") : t("byYou")) + "</span>");
+      }, "nothing") + "</div>";
+      h += "<div class='sec'><h2>" + esc(t("bills")) + " · " + esc(t("paidBills")) + "</h2>" + listOf(paid, ledgerItem, "nothing") + "</div>";
+    }
+    h += "<div class='sec'><h2>" + esc(t("allEntries")) + "</h2>" + listOf(D.ledger, ledgerItem) + "</div>";
+    return h + "</div>";
+  }
+
+  function walletView() {
+    var D = S.data, W = D.wallet, i, h = head(t("wallet"), "");
+    h += "<p class='hint' style='margin-top:0'>" + esc(t("walletYours")) + " " + esc(t("walletNote")) + "</p>";
+    if (W.paused) { h += "<div class='box warn'>" + esc(t("walletPaused")) + "</div>"; }
+    var bankBy = {}, anyOut = false;
+    for (i = 0; i < (W.bank || []).length; i++) { bankBy[W.bank[i].cur] = W.bank[i]; }
+    for (i = 0; i < W.byCur.length; i++) {
+      var b = W.byCur[i], bk = bankBy[b.cur];
+      h += "<div class='card'><div class='r' style='margin:0'>" + esc(t("balanceRec")) + " · " + esc(b.cur) + "</div><div class='bal'>" + esc(money(b.balance, b.cur)) + "</div>" +
+        "<table class='t'><tr><td>" + esc(t("deposits")) + "</td><td class='n'>" + esc(money(b.deposits, b.cur)) + "</td></tr>" +
+        (b.withdrawn ? "<tr><td>" + esc(t("tookOut")) + "</td><td class='n'>" + esc(money(b.withdrawn, b.cur)) + "</td></tr>" : "") +
+        "<tr><td>" + esc(t("paidOut")) + "</td><td class='n'>" + esc(money(b.paid, b.cur)) + "</td></tr>" +
+        "<tr><td>" + esc(t("waitingPay")) + "</td><td class='n'>" + esc(money(b.waiting, b.cur)) + "</td></tr></table>" +
+        (bk ? "<div class='more'>" + esc(t(bk.matched ? "bankOk" : "bankNo", { d: day(bk.date) })) + "</div>" : "") + "</div>";
+    }
+    if (!W.byCur.length) { h += "<p class='empty'>" + esc(t("nothing")) + "</p>"; }
+    if (W.preferred || W.trigger) {
+      h += "<div class='kv'>" + (W.preferred ? "<b>" + esc(t("preferred")) + "</b><div>" + esc(tx(W.preferred)) + "</div>" : "") +
+        (W.trigger ? "<b>" + esc(t("trigger")) + "</b><div>" + esc(tx(W.trigger)) + "</div>" : "") + "</div>";
+    }
+    if (W.byCat.length) {
+      h += "<div class='sec'><h2>" + esc(t("byCat")) + "</h2>";
+      for (i = 0; i < W.byCat.length; i++) {
+        var c = W.byCat[i];
+        h += "<div class='item'><div class='h'>" + esc(tx(c.category)) + " · " + esc(c.cur) + "</div>" +
+          "<table class='t'><tr><td>" + esc(t("limit")) + "</td><td class='n'>" + esc(c.limit === null || c.limit === undefined ? t("noLimit") : money(c.limit, c.cur)) + "</td></tr>" +
+          "<tr><td>" + esc(t("thisMonth")) + "</td><td class='n'>" + esc(money(c.paidMonth, c.cur)) + "</td></tr>" +
+          "<tr><td>" + esc(t("toDate")) + "</td><td class='n'>" + esc(money(c.paidTotal, c.cur)) + "</td></tr>" +
+          (c.waiting ? "<tr><td>" + esc(t("waitingPay")) + "</td><td class='n'>" + esc(money(c.waiting, c.cur)) + "</td></tr>" : "") + "</table></div>";
+      }
+      h += "</div>";
+    }
+    var waiting = [], paid = [];
+    for (i = 0; i < D.ledger.length; i++) {
+      if (!D.ledger[i].fromWallet) { continue; }
+      if (D.ledger[i].isPaid) { paid.push(D.ledger[i]); } else { waiting.push(D.ledger[i]); }
+    }
+    if (waiting.length) { h += "<div class='sec'><h2>" + esc(t("byWallet")) + "</h2>" + listOf(waiting, ledgerItem) + "</div>"; }
+    h += "<div class='sec'><h2>" + esc(t("walletPays")) + "</h2>" + listOf(paid, ledgerItem) + "</div>";
+    if (W.deposits.length) {
+      for (i = 0; i < W.deposits.length; i++) { if (W.deposits[i].amount < 0) { anyOut = true; } }
+      h += "<div class='sec'><h2>" + esc(t(anyOut ? "depositsW" : "depositsT")) + "</h2><table class='t'>";
+      for (i = 0; i < W.deposits.length; i++) {
+        h += "<tr><td>" + esc(day(W.deposits[i].date)) + (W.deposits[i].amount < 0 ? " · " + esc(t("withdrawal")) : "") +
+          (W.deposits[i].note ? "<br><span class='sub'>" + esc(tx(W.deposits[i].note)) + "</span>" : "") +
+          "</td><td class='n'>" + esc(money(W.deposits[i].amount, W.deposits[i].cur)) + "</td></tr>";
+      }
+      h += "</table></div>";
+    }
+    return h + "</div>";
+  }
+
+  function choiceWord(status) {
+    return tx(status);
+  }
+
+  function decisionView() {
+    var d = findDecision(S.arg && S.arg.id);
+    if (!d) { S.view = "home"; return homeView(); }
+    var D = S.data, i, h = head(tx(d.issue), "");
+    h += "<div class='kv'><b>" + esc(t("decisionT")) + "</b><div>" + esc(d.id) + (d.opened ? ", " + esc(t("openedOn", { d: day(d.opened) })) : "") + "</div>";
+    if (d.rec) { h += "<b>" + esc(t("rec")) + "</b><div>" + esc(tx(d.rec)) + "</div>"; }
+    h += "<b>" + esc(t("amount")) + "</b><div>" + esc(d.amount !== undefined ? money(d.amount, d.cur) : t("noAmount")) + "</div>";
+    var ofProject = d.ref ? findProject(d.ref) : null;
+    if (ofProject) { h += "<b>" + esc(t("pId")) + "</b><div><button type='button' class='link' data-go='project' data-arg='" + esc(projectKey(ofProject)) + "'>" + esc(tx(ofProject.name)) + "</button></div>"; }
+    h += "</div>";
+
+    var behind = "";
+    for (i = 0; i < D.activity.length; i++) { if (same(D.activity[i].ref, d.id)) { behind += activityItem(D.activity[i], true); } }
+    for (i = 0; i < D.ledger.length; i++) { if (same(D.ledger[i].ref, d.id)) { behind += ledgerItem(D.ledger[i], true); } }
+    var files = relatedLine(d.id, true);
+    if (behind || files) { h += "<div class='sec'><h2>" + esc(t("behind")) + "</h2>" + files + behind + "</div>"; }
+
+    if (d.waiting) {
+      var asked = called(d);
+      if (asked) {
+        h += "<div class='box good'><b>" + esc(t("calledT")) + "</b>" + (isStamp(asked) ? "<br>" + esc(t("recorded", { t: stamp(asked) })) : "") +
+          (S.fresh && same(S.fresh, d.id) ? "<br>" + esc(t("told")) : "") + "<br>" + esc(t("calledP")) + "</div>";
+      }
+      h += "<div class='sec'><h2>" + esc(t("waiting")) + "</h2>" + choiceButtons(d) + "</div>";
+    } else {
+      h += "<div class='box good'><b>" + esc(d.by ? t("youChose", { who: d.by, c: choiceWord(d.status) }) : choiceWord(d.status)) + "</b>" +
+        (d.decided ? "<br>" + esc(t("recorded", { t: stamp(S.done && S.done.choice !== "call" && same(S.done.id, d.id) ? S.done.when : d.decided) })) : "") +
+        (S.fresh && S.done && S.done.choice !== "call" && same(S.fresh, d.id) ? "<br>" + esc(t("told")) : "") +
+        (d.note ? "<div class='note'><b>" + esc(t("notes")) + "</b>" + esc(d.note) + "</div>" : "") + "</div>";
+      h += "<p class='hint'>" + esc(t("changed")) + "</p>" + waButton();
+    }
+    return h + "</div>";
+  }
+
+  function projectView() {
+    var pj = findProject(S.arg && S.arg.id);
+    if (!pj) { S.view = "home"; return homeView(); }
+    var D = S.data, i, h = head(tx(pj.name), ""), prog = projectProgress(pj);
+    h += "<div style='margin-top:8px'>" + statusTag(pj.status) + "</div>";
+    if (prog.length) { h += "<p style='margin:8px 0 0;font-weight:700'>" + esc(prog.join(" · ")) + "</p>"; }
+    h += noteBox(t("pUpdate"), pj.update);
+    var lv = String(pj.level || "").toLowerCase();
+    h += "<div class='kv'>";
+    if (pj.id) { h += "<b>" + esc(t("pId")) + "</b><div>" + esc(pj.id) + "</div>"; }
+    if (pj.level) { h += "<b>" + esc(t("pLevel")) + "</b><div>" + esc(tx(pj.level)) + (T.en["pl_" + lv] ? ". " + esc(t("pl_" + lv)) : "") + "</div>"; }
+    if (pj.scope) { h += "<b>" + esc(t("pScope")) + "</b><div>" + esc(tx(pj.scope)) + "</div>"; }
+    if (pj.vendors) { h += "<b>" + esc(t("pVendors")) + "</b><div>" + esc(pj.vendors) + "</div>"; }
+    if (pj.cost !== undefined) { h += "<b>" + esc(t("pCost")) + "</b><div>" + esc(money(pj.cost, pj.cur)) + "</div>"; }
+    if (pj.start) { h += "<b>" + esc(t("pStart")) + "</b><div>" + esc(day(pj.start)) + "</div>"; }
+    if (pj.due) { h += "<b>" + esc(t("pDue")) + "</b><div>" + esc(day(pj.due)) + "</div>"; }
+    if (pj.closed) { h += "<b>" + esc(t("pClosed")) + "</b><div>" + esc(day(pj.closed)) + "</div>"; }
+    if (pj.notes) { h += "<b>" + esc(t("notes")) + "</b><div>" + esc(tx(pj.notes)) + "</div>"; }
+    h += "</div>";
+
+    // Everything that carries this project's ID in its Ref, or the ID of one of the project's decisions.
+    var mine = {}, dec = "", act = "", money2 = "", files = "";
+    if (pj.id) { mine[pj.id.toUpperCase()] = true; }
+    for (i = 0; i < D.decisions.length; i++) {
+      if (pj.id && same(D.decisions[i].ref, pj.id)) { mine[String(D.decisions[i].id).toUpperCase()] = true; dec += D.decisions[i].waiting ? decisionCard(D.decisions[i]) : decisionLine(D.decisions[i]); }
+    }
+    var has = function (ref) { return !!ref && mine[String(ref).toUpperCase()] === true; };
+    for (i = 0; i < D.activity.length; i++) { if (has(D.activity[i].ref)) { act += activityItem(D.activity[i], true); } }
+    for (i = 0; i < D.ledger.length; i++) { if (has(D.ledger[i].ref)) { money2 += ledgerItem(D.ledger[i], true); } }
+    for (i = 0; i < D.files.length; i++) {
+      if (!has(D.files[i].ref)) { continue; }
+      var u = href(D.files[i].url), label = esc(tx(D.files[i].desc || D.files[i].type));
+      files += "<div class='item'><div class='h'>" + (u ? "<a href='" + esc(u) + "' target='_blank' rel='noopener noreferrer'>" + label + "</a>" : label) + "</div><div class='m'>" + esc([day(D.files[i].date), tx(D.files[i].type)].filter(Boolean).join(" · ")) + "</div></div>";
+    }
+    if (dec) { h += "<div class='sec'><h2>" + esc(t("pDecisions")) + "</h2>" + dec + "</div>"; }
+    if (act) { h += "<div class='sec'><h2>" + esc(t("pActivity")) + "</h2>" + act + "</div>"; }
+    if (money2) { h += "<div class='sec'><h2>" + esc(t("pMoney")) + "</h2>" + money2 + "</div>"; }
+    if (files) { h += "<div class='sec'><h2>" + esc(t("pFiles")) + "</h2>" + files + "</div>"; }
+    h += "<p class='hint' style='margin-top:22px'>" + esc(t("pScopeNote")) + "</p>";
+    return h + "</div>";
+  }
+
+  function decisionLine(d) {
+    return "<div class='item'><div class='h'>" + esc(tx(d.issue)) + "</div><div class='m'>" + esc([d.id, d.amount !== undefined ? money(d.amount, d.cur) : ""].filter(Boolean).join(" · ")) + "</div>" +
+      statusTag(d.status) + "<div class='more'><button type='button' class='link' data-go='decision' data-arg='" + esc(d.id) + "'>" + esc(t("view")) + "</button></div></div>";
+  }
+
+  function confirmView() {
+    var d = findDecision(S.arg && S.arg.id), c = S.arg && S.arg.choice;
+    if (!d || !d.waiting || !T.en["confirmT_" + c]) { S.view = "home"; return homeView(); }
+    var h = head(t("confirmT_" + c), "");
+    h += "<p style='margin:14px 0 6px'>" + esc(t("confirmP_" + c)) + "</p>";
+    h += "<div class='card'><div class='t'>" + esc(tx(d.issue)) + "</div>" + (d.rec ? "<div class='r'>" + esc(t("rec")) + ": " + esc(tx(d.rec)) + "</div>" : "") +
+      "<div class='amt'>" + esc(d.amount !== undefined ? money(d.amount, d.cur) : t("noAmount")) + "</div></div>";
+    h += "<label class='l' for='note'>" + esc(t("noteL")) + "</label><textarea id='note' maxlength='500'" + (S.busy ? " disabled" : "") + ">" + esc(S.arg.note || "") + "</textarea>";
+    h += "<button type='button' class='btn navy' data-act='send'" + (S.busy ? " disabled" : "") + ">" + esc(S.busy ? t("saving") : t("yes_" + c)) + "</button>";
+    h += "<button type='button' class='btn' data-act='back'" + (S.busy ? " disabled" : "") + ">" + esc(t("goBack")) + "</button>";
+    return h + "</div>";
+  }
+
+  /* ---------- owner intake ---------- */
+
+  function qLabel(o) { return S.lang === "es" ? (o.es || o.en) : o.en; }
+  function qHint(o) { return S.lang === "es" ? (o.hintEs || o.hintEn || "") : (o.hintEn || ""); }
+  function optionWord(q, value) {
+    for (var i = 0; i < (q.options || []).length; i++) { if (q.options[i][0] === value) { return S.lang === "es" ? q.options[i][1] : q.options[i][0]; } }
+    return value;
+  }
+  function intakeCount(sec) {
+    var I = S.data.intake, a = 0, n = 0;
+    for (var s = 0; s < I.sections.length; s++) {
+      if (sec && I.sections[s].id !== sec) { continue; }
+      for (var i = 0; i < I.sections[s].q.length; i++) { n++; if (I.answers[I.sections[s].q[i].id]) { a++; } }
+    }
+    return { a: a, n: n };
+  }
+  function findSection(id) {
+    var L = S.data.intake.sections;
+    for (var i = 0; i < L.length; i++) { if (L[i].id === id) { return L[i]; } }
+    return null;
+  }
+
+  function intakeCard() {
+    var I = S.data.intake;
+    if (!I) { return ""; }
+    if (I.state === "received") {
+      return "<div class='card'><div class='t'>" + esc(t("inThanks")) + "</div>" + (I.when ? "<div class='r'>" + esc(t("inReceived", { t: stamp(I.when) })) + "</div>" : "") +
+        "<button type='button' class='btn' data-go='intake'>" + esc(t("inSee")) + "</button></div>";
+    }
+    var c = intakeCount();
+    return "<div class='card'><div class='t serif' style='font-size:22px;font-weight:400'>" + esc(t("inTitle")) + "</div><div class='r'>" + esc(t("inText")) + "</div>" +
+      "<div class='r'>" + esc(t("inProgress", c)) + "</div>" +
+      "<button type='button' class='btn navy' data-go='intake'>" + esc(c.a ? t("inContinue") : t("inStart")) + "</button></div>";
+  }
+
+  function intakeView() {
+    var I = S.data.intake, h = head(t("inHead"), "");
+    if (I.state === "received") { h += "<div class='box good'><b>" + esc(t("inThanks")) + "</b>" + (I.when ? "<br>" + esc(t("inReceived", { t: stamp(I.when) })) : "") + "</div>"; }
+    else { h += "<p class='hint' style='margin:10px 0 0'>" + esc(t("inText")) + "</p>"; }
+    h += "<div class='rows' style='margin-top:10px'>";
+    for (var s = 0; s < I.sections.length; s++) {
+      var c = intakeCount(I.sections[s].id);
+      h += "<button type='button' data-go='intakeSec' data-arg='" + esc(I.sections[s].id) + "'>" + esc(qLabel(I.sections[s])) + "<span>" + esc(t("inProgress", c)) + " ›</span></button>";
+    }
+    h += "</div>";
+    if (I.state === "open") {
+      h += "<p class='hint'>" + esc(t("inSendHint")) + "</p>" +
+        "<button type='button' class='btn navy' data-act='sendIntake'" + (S.busy ? " disabled" : "") + ">" + esc(S.busy ? t("saving") : t("inSend")) + "</button>";
+    }
+    return h + "</div>";
+  }
+
+  function intakeSecView() {
+    var I = S.data.intake, sec = findSection(S.arg && S.arg.id);
+    if (!sec) { S.view = "intake"; return intakeView(); }
+    var open = I.state === "open", h = head(qLabel(sec), "");
+    if (qHint(sec)) { h += "<p class='hint' style='margin:10px 0 0'>" + esc(qHint(sec)) + "</p>"; }
+    if (!open) {
+      h += "<div class='kv'>";
+      for (var k = 0; k < sec.q.length; k++) {
+        var val = I.answers[sec.q[k].id] || "";
+        h += "<b>" + esc(qLabel(sec.q[k])) + "</b><div>" + esc(val ? (sec.q[k].type === "choice" ? optionWord(sec.q[k], val) : (sec.q[k].type === "check" ? "✓" : val)) : t("noAnswer")) + "</div>";
+      }
+      return h + "</div></div>";
+    }
+    for (var i = 0; i < sec.q.length; i++) {
+      var q = sec.q[i], id = "q_" + q.id;
+      var v = S.draft[q.id] !== undefined ? S.draft[q.id] : (I.answers[q.id] || "");
+      var bad = S.badFields.indexOf(q.id) !== -1 ? " bad" : "";
+      var dis = S.busy ? " disabled" : "";
+      if (q.type === "check") {
+        h += "<label class='tick'><input type='checkbox' id='" + id + "'" + (v === "Yes" ? " checked" : "") + dis + "><span>" + esc(qLabel(q)) + "</span></label>";
+        continue;
+      }
+      h += "<label class='l' for='" + id + "'>" + esc(qLabel(q)) + "</label>";
+      if (qHint(q)) { h += "<div class='qh'>" + esc(qHint(q)) + "</div>"; }
+      if (q.type === "choice") {
+        h += "<select class='f' id='" + id + "'" + dis + "><option value=''>" + esc(t("choose")) + "</option>";
+        for (var o = 0; o < q.options.length; o++) {
+          h += "<option value='" + esc(q.options[o][0]) + "'" + (q.options[o][0] === v ? " selected" : "") + ">" + esc(S.lang === "es" ? q.options[o][1] : q.options[o][0]) + "</option>";
+        }
+        h += "</select>";
+      } else if (q.type === "long") {
+        h += "<textarea class='" + bad.trim() + "' id='" + id + "' maxlength='1500'" + dis + ">" + esc(v) + "</textarea>";
+      } else {
+        h += "<input class='f" + bad + "' id='" + id + "' type='text' maxlength='300' autocomplete='off' value='" + esc(v) + "'" + dis + ">";
+      }
+    }
+    h += "<button type='button' class='btn navy' data-act='saveSection'" + (S.busy ? " disabled" : "") + ">" + esc(S.busy ? t("saving") : t("inSave")) + "</button>";
+    return h + "</div>";
+  }
+
+  // What is typed in the section on screen, so it is not lost when the screen is redrawn.
+  function captureForm() {
+    if (S.view !== "intakeSec" || !S.data || !S.data.intake) { return {}; }
+    var sec = findSection(S.arg && S.arg.id), out = {};
+    if (!sec) { return out; }
+    for (var i = 0; i < sec.q.length; i++) {
+      var node = el("q_" + sec.q[i].id);
+      if (!node) { continue; }
+      var v = sec.q[i].type === "check" ? (node.checked ? "Yes" : "") : String(node.value || "").trim();
+      S.draft[sec.q[i].id] = v;
+      out[sec.q[i].id] = v;
+    }
+    return out;
+  }
+
+  // The section that holds the acknowledgment box.
+  function ackSection() {
+    var L = (S.data && S.data.intake && S.data.intake.sections) || [];
+    for (var i = 0; i < L.length; i++) { for (var k = 0; k < L[i].q.length; k++) { if (L[i].q[k].id === "ack") { return L[i].id; } } }
+    return L.length ? L[L.length - 1].id : "services";
+  }
+
+  function intakeAnswer(r, after) {
+    S.busy = false;
+    take(r);
+    if (r.code === "SIGN_IN" || r.code === "NO_LINK" || r.code === "OFF") { stop(r.code); return; }
+    if (!r.ok) {
+      S.badFields = r.fields || [];
+      S.msg = { key: T.en[r.code] ? r.code : "SERVER", kind: "bad" };
+      if (r.code === "NEED_ACK" && S.view !== "intakeSec") {
+        var keepMsg = S.msg;
+        go("intakeSec", { id: ackSection() });
+        S.msg = keepMsg; render();
+        return;
+      }
+      if (r.code === "INTAKE_CLOSED" && S.view === "intakeSec") { S.flash = S.msg; S.msg = null; stepBack(); return; }
+      if (!r.view && !S.data) { stop(r.code); return; }
+      render(); window.scrollTo(0, 0);
+      return;
+    }
+    S.draft = {}; S.badFields = [];
+    after();
+  }
+
+  function saveSection() {
+    if (S.busy) { return; }
+    var answers = captureForm();
+    S.busy = true; S.msg = null; render();
+    post({ op: "intake_save", k: S.key, tok: S.tok, lang: S.lang, answers: answers }, function (r) {
+      intakeAnswer(r, function () { S.flash = { key: "inSaved", kind: "good" }; stepBack(); });
+    }, function () { S.busy = false; S.msg = { key: "NET", kind: "bad" }; render(); });
+  }
+
+  function sendIntake() {
+    if (S.busy) { return; }
+    S.busy = true; S.msg = null; render();
+    post({ op: "intake_submit", k: S.key, tok: S.tok, lang: S.lang, answers: {} }, function (r) {
+      intakeAnswer(r, function () { stepBack(); });
+    }, function () { S.busy = false; S.msg = { key: "NET", kind: "bad" }; render(); });
+  }
+
+  /* ---------- taps ---------- */
+
+  function setLang() {
+    captureForm();
+    S.lang = S.lang === "es" ? "en" : "es";
+    setStore("lang", S.lang, true);
+    render();
+    if (S.tok && S.data) { load(true); }
+    if (S.view === "pin") { focusPin(); }
+  }
+
+  document.addEventListener("click", function (ev) {
+    var n = ev.target;
+    while (n && n !== document.body && !(n.getAttribute && (n.getAttribute("data-go") || n.getAttribute("data-act") || n.getAttribute("data-choice")))) { n = n.parentNode; }
+    if (!n || n === document.body || !n.getAttribute || n.disabled) { return; }
+    var goTo = n.getAttribute("data-go"), act = n.getAttribute("data-act"), choice = n.getAttribute("data-choice"), arg = n.getAttribute("data-arg");
+    if (goTo) { go(goTo, arg ? { id: arg } : null); return; }
+    if (choice) {
+      if (S.view !== "decision") { try { window.history.pushState({ view: "decision", arg: { id: arg } }, "", window.location.pathname); } catch (e) {} }
+      go("confirm", { id: arg, choice: choice });
+      return;
+    }
+    if (act === "back") { stepBack(); return; }
+    if (act === "signin") { signIn(); return; }
+    if (act === "lang") { setLang(); return; }
+    if (act === "retry") { if (S.msg && S.msg.retry) { S.msg.retry(); } return; }
+    if (act === "refresh") { load(); return; }
+    if (act === "send") { sendDecision(); return; }
+    if (act === "saveSection") { saveSection(); return; }
+    if (act === "sendIntake") { sendIntake(); return; }
+    if (act === "signout") {
+      dropStore("tok"); S.tok = ""; S.data = null; S.tr = null; S.done = null;
+      if (S.key) { hello(); } else { S.view = "private"; render(); }
+      return;
+    }
+  });
+  el("lang").onclick = setLang;
+  el("logoBar").src = LOGO;
+  document.addEventListener("input", function (ev) {
+    if (ev.target && ev.target.id === "pin") {
+      var n = S.info.pinLen || 6, raw = String(ev.target.value || "");
+      if (raw.length === n && raw.replace(/[^0-9]/g, "") === raw) { signIn(); }
+    }
+  });
+  document.addEventListener("keydown", function (ev) {
+    if (ev.key === "Enter" && ev.target && ev.target.id === "pin") { signIn(); }
+  });
+  // Coming back to a page that was left open: show the Portfolio as it is now.
+  document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState !== "visible" || S.busy || !S.tok || !S.data) { return; }
+    if (S.view !== "confirm" && S.view !== "intakeSec" && nowMs() - S.loadedAt > 60000) { load(true); }
+  });
+
+  function start() {
+    var saved = getStore("lang");
+    var nav = String(navigator.language || "").toLowerCase();
+    S.lang = saved === "es" || saved === "en" ? saved : (nav.indexOf("es") === 0 ? "es" : "en");
+
+    // The personal link carries the key after the # sign, so it is never sent to GitHub.
+    // It is taken out of the address bar as soon as it has been read.
+    var m = /[#&]k=([a-f0-9]{32})/.exec(String(window.location.hash || ""));
+    var stored = getStore("k");
+    if (m) {
+      if (stored && stored !== m[1]) { dropStore("tok"); dropStore("k"); }
+      S.key = m[1];
+      setStore("k", S.key, false);
+      try { window.history.replaceState({ view: "home" }, "", window.location.pathname); } catch (e) {}
+    } else {
+      S.key = stored;
+    }
+    S.tok = S.key ? getStore("tok") : "";
+    if (!S.key) { S.view = "private"; render(); return; }
+    if (S.tok) { load(); } else { hello(); }
+  }
+
+  start();
+</script>
+</body>
+</html>
