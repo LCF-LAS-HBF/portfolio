@@ -110,6 +110,16 @@
   table.t td.n, table.t th.n { text-align: right; white-space: nowrap; }
   .bal { font-size: 24px; font-weight: 700; }
   .foot { margin-top: 28px; font-size: 13px; color: #51606e; text-align: center; }
+  .hq { border: 1.5px solid #d5dbe1; border-radius: 12px; margin-top: 10px; overflow: hidden; }
+  .hq.open { border-color: #0f2340; }
+  .hq > button { display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 12px; padding: 14px; background: #ffffff; border: 0; text-align: left; font-size: 16px; font-weight: 700; min-height: 52px; }
+  .hq.open > button { background: #eef1f5; }
+  .hq > button span { flex: none; color: #51606e; font-weight: 400; font-size: 18px; }
+  .hq.open > button span { transform: rotate(90deg); }
+  .hq .ha { padding: 2px 14px 16px; border-top: 1px solid #d5dbe1; }
+  .hq .ha b { display: block; margin-top: 13px; font-size: 15.5px; }
+  .hq .ha p { margin: 2px 0 0; font-size: 15.5px; overflow-wrap: anywhere; }
+  .hq .ha p.p { margin-top: 13px; }
   .empty { color: #51606e; font-size: 15px; padding: 10px 0; }
 </style>
 </head>
@@ -204,6 +214,7 @@
       walletPaused: "Payments from the House Wallet are paused during the Seasonal Hold.",
       withdrawal: "Taken out by you", depositsW: "Deposits and withdrawals",
       glossary: "What our words mean", gl1: "Words on this dashboard", gl2: "What our services mean",
+      help: "How to use this dashboard", helpP: "Tap a heading to open it.",
       updates: "Past updates", updated: "Updated {d}", noUpdates: "No updates have been posted yet.", seeUpdates: "See past updates",
       sk_scheduled: "Scheduled update", sk_afteravisit: "After a visit", sk_aftertalkingwiththeowner: "After we spoke with you", sk_urgent: "Urgent",
       iPaid: "I paid this", iPaidT: "You paid this bill?", iPaidP: "Tell us and we will record it, so that it is not paid twice.",
@@ -308,6 +319,7 @@
       walletPaused: "Los pagos desde el House Wallet están en pausa durante la Pausa de temporada.",
       withdrawal: "Retirado por usted", depositsW: "Depósitos y retiros",
       glossary: "Qué significan nuestras palabras", gl1: "Palabras de este panel", gl2: "Qué significan nuestros servicios",
+      help: "Cómo usar este panel", helpP: "Toque un título para abrirlo.",
       updates: "Novedades anteriores", updated: "Actualizado el {d}", noUpdates: "Aún no se ha publicado ninguna novedad.", seeUpdates: "Ver novedades anteriores",
       sk_scheduled: "Novedad programada", sk_afteravisit: "Después de una visita", sk_aftertalkingwiththeowner: "Después de conversar con usted", sk_urgent: "Urgente",
       iPaid: "Yo pagué esto", iPaidT: "¿Usted pagó esta cuenta?", iPaidP: "Avísenos y lo registramos, para que no se pague dos veces.",
@@ -430,6 +442,145 @@
   };
 
   // Everything the page knows right now. render() draws the screen from this.
+  // The Help screen: how to use this dashboard, in both languages.
+  // A word in {braces} is replaced by the label this page shows for it, so the help always names a button as it is written.
+  // "when" says who sees a heading or a line: see helpOn() below.
+  var HELP = [
+    { id: "home", when: "steward",
+      en: ["Your home screen", [
+        ["The status at the top", "{st_Stable}, {st_Attention} or {st_Immediate}: our overall reading of the property today."],
+        ["{live}", "The page reads your Portfolio each time you open it. Tap {refresh} to read it again."],
+        ["The boxes", "{lastVisit}, {nextVisit}, {openItems}, {needTile} and {upcoming}. Tap any box to see the detail and notes."],
+        ["The update", "Every update has the same headings: {happened}, {did}, {attention} and {need}. Earlier updates are kept under {updates}."]
+      ]],
+      es: ["Su pantalla de inicio", [
+        ["El estado, arriba", "{st_Stable}, {st_Attention} o {st_Immediate}: nuestra lectura general de la propiedad hoy."],
+        ["{live}", "La página lee su Portafolio cada vez que usted la abre. Toque {refresh} para leerlo de nuevo."],
+        ["Los cuadros", "{lastVisit}, {nextVisit}, {openItems}, {needTile} y {upcoming}. Toque cualquier cuadro para ver el detalle y las notas."],
+        ["La novedad", "Cada novedad tiene los mismos títulos: {happened}, {did}, {attention} y {need}. Las anteriores se guardan en {updates}."]
+      ]] },
+    { id: "decide", when: "decide",
+      en: ["When we need a decision", [
+        ["", "A decision shows on your home screen under {need}, with our recommendation. Tap {view} to see what is behind it."],
+        ["{approve}", "You agree, and we go ahead.", "decider"],
+        ["{defer}", "You ask us to hold it for now.", "decider"],
+        ["{other2}", "You ask us to bring you another option.", "decider"],
+        ["{call}", "You ask us to call you before you decide. The decision stays open until you choose.", "decider"],
+        ["", "Each choice asks you to confirm, and you may add a note. Your answer is recorded with the date and time. If you change your mind, message us. The record keeps both entries.", "decider"],
+        ["", "{viewOnly}", "viewer"],
+        ["", "{holdDecisions}", "held"]
+      ]],
+      es: ["Cuando necesitamos una decisión", [
+        ["", "Una decisión aparece en su pantalla de inicio, bajo {need}, con nuestra recomendación. Toque {view} para ver qué hay detrás."],
+        ["{approve}", "Usted está de acuerdo y seguimos adelante.", "decider"],
+        ["{defer}", "Nos pide dejarlo en espera por ahora.", "decider"],
+        ["{other2}", "Nos pide que le traigamos otra opción.", "decider"],
+        ["{call}", "Nos pide que le llamemos antes de decidir. La decisión sigue abierta hasta que usted elija.", "decider"],
+        ["", "Cada opción le pide confirmar, y puede agregar una nota. Su respuesta queda registrada con fecha y hora. Si cambia de opinión, escríbanos. El registro conserva ambas entradas.", "decider"],
+        ["", "{viewOnly}", "viewer"],
+        ["", "{holdDecisions}", "held"]
+      ]] },
+    { id: "wallet", when: "wallet",
+      en: ["House Wallet and bill limits", [
+        ["", "{walletYours}"],
+        ["{billList}", "The regular bills we may pay for you. Each has a limit, also called NTE (not to exceed): the most we may pay for that bill without asking you first."],
+        ["Approving the list", "Open {billList}, read each bill and its limit, then tap {approveBtn}. If a bill or a limit changes later, we ask you to approve the list again.", "payer"],
+        ["A bill above its limit", "For each bill you choose one of two instructions: {holdOpt}, or {payOpt}. Either way we look for the cause."],
+        ["{balanceRec}", "The balance as our records have it. Under it you see the date it was last matched to the bank."],
+        ["", "{walletNote}"]
+      ]],
+      es: ["House Wallet y límites de las cuentas", [
+        ["", "{walletYours}"],
+        ["{billList}", "Las cuentas habituales que podemos pagar por usted. Cada una tiene un límite, también llamado NTE (no exceder): lo máximo que podemos pagar por esa cuenta sin consultarle antes."],
+        ["Aprobar la lista", "Abra {billList}, lea cada cuenta y su límite, y toque {approveBtn}. Si después cambia una cuenta o un límite, le pedimos aprobar la lista de nuevo.", "payer"],
+        ["Una cuenta por encima de su límite", "Para cada cuenta usted elige una de dos instrucciones: {holdOpt}, o {payOpt}. En ambos casos buscamos la causa."],
+        ["{balanceRec}", "El saldo según nuestros registros. Debajo aparece la fecha en que se concilió con el banco por última vez."],
+        ["", "{walletNote}"]
+      ]] },
+    { id: "pay", when: "payer",
+      en: ["Paying a bill yourself", [
+        ["", "You can pay any bill yourself at any time."],
+        ["{iPaid}", "Find the bill under {need} or in {ledger} and tap {iPaid}. Give the date you paid it. A link to the receipt is optional."],
+        ["", "We record it as paid by you, so that it is not paid twice."]
+      ]],
+      es: ["Pagar una cuenta usted mismo", [
+        ["", "Usted puede pagar cualquier cuenta en cualquier momento."],
+        ["{iPaid}", "Busque la cuenta bajo {need} o en {ledger} y toque {iPaid}. Indique la fecha en que la pagó. El enlace al recibo es opcional."],
+        ["", "La registramos como pagada por usted, para que no se pague dos veces."]
+      ]] },
+    { id: "project", when: "project",
+      en: ["Projects", [
+        ["", "A project is an upgrade or a renovation. It is separate from the routine care of the home."],
+        ["{viewProject}", "Each project has its own screen: the scope, the vendors, the expected cost, the dates and the latest update, with its decisions, visits, payments and files."],
+        ["", "{pScopeNote}"]
+      ]],
+      es: ["Proyectos", [
+        ["", "Un proyecto es una mejora o una renovación. Es aparte del cuidado habitual de la casa."],
+        ["{viewProject}", "Cada proyecto tiene su propia pantalla: el alcance, los proveedores, el costo esperado, las fechas y la última novedad, con sus decisiones, visitas, pagos y archivos."],
+        ["", "{pScopeNote}"]
+      ]] },
+    { id: "record", when: "record",
+      en: ["The record", [
+        ["", "Everything behind the summary is kept under {record}, newest first."],
+        ["{activity}", "Visits, repairs and notes."],
+        ["{systems}", "Each system of the home, what was last done and what is due next."],
+        ["{ledger}", "What has been paid and what is due."],
+        ["{decisions}", "Every decision and how it was answered.", "decide"],
+        ["{files}", "Documents, photos and receipts. A link opens in a new tab."],
+        ["{vendors}", "The trades who have worked on the home."],
+        ["{precord}", "The facts about the property, and where each one came from."],
+        ["{glossary}", "Every word we use, explained."]
+      ]],
+      es: ["El registro", [
+        ["", "Todo lo que hay detrás del resumen se guarda en {record}, lo más reciente primero."],
+        ["{activity}", "Visitas, reparaciones y notas."],
+        ["{systems}", "Cada sistema de la casa, lo último que se hizo y lo que sigue."],
+        ["{ledger}", "Lo que se ha pagado y lo que está por pagar."],
+        ["{decisions}", "Cada decisión y cómo se respondió.", "decide"],
+        ["{files}", "Documentos, fotos y recibos. Un enlace se abre en otra pestaña."],
+        ["{vendors}", "Los oficios que han trabajado en la casa."],
+        ["{precord}", "Los datos de la propiedad, y de dónde salió cada uno."],
+        ["{glossary}", "Cada palabra que usamos, explicada."]
+      ]] },
+    { id: "intake", when: "intake",
+      en: ["Telling us about your property", [
+        ["", "{inText}"],
+        ["", "Answer one section at a time and tap {inSave}. You can stop and come back later. When you are ready, tap {inSend}."],
+        ["", "Please leave out codes and passwords. We arrange those with you directly."]
+      ]],
+      es: ["Cuéntenos sobre su propiedad", [
+        ["", "{inText}"],
+        ["", "Responda una sección a la vez y toque {inSave}. Puede parar y volver después. Cuando esté listo, toque {inSend}."],
+        ["", "Por favor no escriba códigos ni contraseñas. Eso lo coordinamos directamente con usted."]
+      ]] },
+    { id: "lang", when: "",
+      en: ["Language and messages", [
+        ["Language", "The button at the top right switches between English and Spanish."],
+        ["What our office writes", "Our office writes in English. In Spanish those notes are translated automatically."],
+        ["Amounts", "Amounts are shown in the currency they were recorded in, lempiras (HNL) or dollars (USD). Nothing is converted."],
+        ["{wa}", "The button at the bottom of your home screen opens WhatsApp with our number.", "wa"]
+      ]],
+      es: ["Idioma y mensajes", [
+        ["Idioma", "El botón de arriba a la derecha cambia entre español e inglés."],
+        ["Lo que escribe nuestra oficina", "Nuestra oficina escribe en inglés. En español esas notas se traducen automáticamente."],
+        ["Montos", "Los montos se muestran en la moneda en que se registraron, lempiras (HNL) o dólares (USD). No se convierte nada."],
+        ["{wa}", "El botón al final de su pantalla de inicio abre WhatsApp con nuestro número.", "wa"]
+      ]] },
+    { id: "private", when: "",
+      en: ["Keeping your dashboard private", [
+        ["Your link", "Your link is personal. It opens your property and nobody else's. Please do not forward it."],
+        ["Your PIN", "Only you should know it. After too many wrong PINs, sign-in pauses for a few minutes and we are told."],
+        ["On a shared phone", "Untick the box on the PIN screen so the phone does not stay signed in, and tap {signOut} at the bottom of your home screen when you finish."],
+        ["Codes and passwords", "Access codes and passwords are never shown here. We arrange those with you directly."]
+      ]],
+      es: ["Mantenga privado su panel", [
+        ["Su enlace", "Su enlace es personal. Abre su propiedad y la de nadie más. Por favor no lo reenvíe."],
+        ["Su PIN", "Solo usted debe conocerlo. Después de demasiados PIN incorrectos, el acceso se pausa unos minutos y se nos avisa."],
+        ["En un teléfono compartido", "Quite la marca de la casilla en la pantalla del PIN para que el teléfono no mantenga la sesión, y toque {signOut} al final de su pantalla de inicio cuando termine."],
+        ["Códigos y contraseñas", "Los códigos de acceso y las contraseñas nunca se muestran aquí. Eso lo coordinamos directamente con usted."]
+      ]] }
+  ];
+
   var S = { lang: "en", key: "", tok: "", view: "loading", arg: null, info: {}, data: null, tr: null, msg: null, busy: false, loadedAt: 0, done: null, draft: {}, badFields: [], fresh: "", flash: null };
 
   function el(id) { return document.getElementById(id); }
@@ -931,7 +1082,8 @@
 
   function foot(withGlossary) {
     return "<div class='foot'>" + esc(t("signedAs", { name: S.data.owner.name })) + " · <button type='button' class='link' data-act='signout'>" + esc(t("signOut")) + "</button>" +
-      (withGlossary ? "<br><button type='button' class='link' data-go='glossary' style='margin-top:10px'>" + esc(t("glossary")) + "</button>" : "") + "</div>";
+      (withGlossary ? "<br><button type='button' class='link' data-go='help' style='margin-top:10px'>" + esc(t("help")) + "</button>" +
+        "<br><button type='button' class='link' data-go='glossary' style='margin-top:10px'>" + esc(t("glossary")) + "</button>" : "") + "</div>";
   }
 
   function homeView() {
@@ -1015,6 +1167,7 @@
     h += row(t("files"), D.files.length, "files");
     h += row(t("vendors"), D.vendors.length, "vendors");
     h += row(t("precord"), null, "precord");
+    h += row(t("help"), null, "help");
     h += row(t("glossary"), null, "glossary");
     h += "</div></div>";
 
@@ -1151,6 +1304,58 @@
     return h;
   }
 
+  /* ---------- help ---------- */
+
+  // Who sees a heading or a line of the Help screen.
+  function helpOn(w) {
+    var D = S.data, p = D.prop, kind = p.kind || (p.ongoing ? "steward" : "record");
+    if (!w) { return true; }
+    if (w === "steward") { return kind === "steward" && !p.pending; }
+    if (w === "decide") { return !!p.decisions && !p.pending; }
+    if (w === "decider") { return !!D.owner.canDecide; }
+    if (w === "viewer") { return !D.owner.canDecide && p.mode !== "hold"; }
+    if (w === "held") { return !D.owner.canDecide && p.mode === "hold"; }
+    if (w === "wallet") { return !!(p.wallet && D.wallet) && !p.pending; }
+    if (w === "payer") { return !!D.owner.canPay && !p.pending; }
+    if (w === "project") { return (kind === "project" || (D.projects || []).length > 0) && !p.pending; }
+    if (w === "record") { return !p.pending; }
+    if (w === "intake") { return !!(D.intake && D.intake.state !== "received"); }
+    if (w === "wa") { return !!String(S.info.wa || "").replace(/[^0-9]/g, ""); }
+    return false;
+  }
+  // Help text with each {word} replaced by the label this page shows for it.
+  function hx(s) {
+    return esc(String(s).replace(/[{]([A-Za-z0-9_]+)[}]/g, function (m, k) { return T.en[k] ? t(k) : m; }));
+  }
+  // Keeps the heading that was just tapped in view, below the bar at the top of the page.
+  function showHelp(id) {
+    var n = el("help_" + id);
+    if (!n || !n.getBoundingClientRect) { return; }
+    var top = n.getBoundingClientRect().top;
+    if (top < 76 || top > window.innerHeight - 90) { window.scrollTo(0, Math.max(0, window.pageYOffset + top - 76)); }
+  }
+  function helpView() {
+    var L = [], i, j, h = head(t("help"), "") + "<p class='hint'>" + esc(t("helpP")) + "</p>";
+    for (i = 0; i < HELP.length; i++) { if (helpOn(HELP[i].when)) { L.push(HELP[i]); } }
+    if (S.help === null || S.help === undefined) { S.help = L.length ? L[0].id : ""; }
+    for (i = 0; i < L.length; i++) {
+      var sec = L[i][S.lang === "es" ? "es" : "en"], on = S.help === L[i].id;
+      h += "<div class='hq" + (on ? " open" : "") + "' id='help_" + L[i].id + "'><button type='button' data-act='help' data-arg='" + L[i].id + "' aria-expanded='" + (on ? "true" : "false") + "'>" +
+        hx(sec[0]) + "<span>›</span></button>";
+      if (on) {
+        h += "<div class='ha'>";
+        for (j = 0; j < sec[1].length; j++) {
+          var it = sec[1][j];
+          if (it[2] && !helpOn(it[2])) { continue; }
+          h += (it[0] ? "<b>" + hx(it[0]) + "</b>" : "") + "<p" + (it[0] ? "" : " class='p'") + ">" + hx(it[1]) + "</p>";
+        }
+        h += "</div>";
+      }
+      h += "</div>";
+    }
+    return h + "</div>";
+  }
+
   function listView() {
     var D = S.data, v = S.view, i, rows = [], h = "";
     if (v === "open") {
@@ -1183,6 +1388,7 @@
       return h + "</div>";
     }
     if (v === "project") { return projectView(); }
+    if (v === "help") { return helpView(); }
     if (v === "glossary") {
       var G1 = GLOSS[S.lang] || GLOSS.en, G2 = GLOSS[S.lang + "2"] || GLOSS.en2;
       h = head(t("glossary"), "") + "<div class='sec'><h2>" + esc(t("gl1")) + "</h2><div class='kv'>";
@@ -1610,13 +1816,14 @@
     while (n && n !== document.body && !(n.getAttribute && (n.getAttribute("data-go") || n.getAttribute("data-act") || n.getAttribute("data-choice")))) { n = n.parentNode; }
     if (!n || n === document.body || !n.getAttribute || n.disabled) { return; }
     var goTo = n.getAttribute("data-go"), act = n.getAttribute("data-act"), choice = n.getAttribute("data-choice"), arg = n.getAttribute("data-arg");
-    if (goTo) { go(goTo, arg ? { id: arg } : null); return; }
+    if (goTo) { if (goTo === "help") { S.help = null; } go(goTo, arg ? { id: arg } : null); return; }
     if (choice) {
       if (S.view !== "decision") { try { window.history.pushState({ view: "decision", arg: { id: arg } }, "", window.location.pathname); } catch (e) {} }
       go("confirm", { id: arg, choice: choice });
       return;
     }
     if (act === "back") { stepBack(); return; }
+    if (act === "help") { S.help = S.help === arg ? "" : arg; render(); showHelp(arg); return; }
     if (act === "signin") { signIn(); return; }
     if (act === "lang") { setLang(); return; }
     if (act === "retry") { if (S.msg && S.msg.retry) { S.msg.retry(); } return; }
